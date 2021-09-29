@@ -50,7 +50,7 @@
 
 ## About The Project
 
-![click](https://raw.githubusercontent.com/ZiaCodes/testing_ripo/main/assets/Screenshot%202021-09-30%20023614.jpg)
+![click](https://raw.githubusercontent.com/ZiaCodes/img_server/main/others/Screenshot%202021-09-30%20023614.jpg)
 
 A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping , contras and exposure etc.
 
