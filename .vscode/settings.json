@@ -1,0 +1,15 @@
+{
+  "files.eol": "\n",
+  "editor.tabSize": 4,
+  "search.exclude": {
+    "node_modules/": true
+  },
+  "files.exclude": {
+    "node_modules/": true,
+    "build/": true,
+    "dist/": true
+  },
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true
+}
