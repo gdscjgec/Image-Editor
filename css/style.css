@@ -1,5 +1,197 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --button-color: #CD443F;
+}
+
+body{
+  font-family: 'Noto Sans', sans-serif;
+}
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+}
+.navigation > .logo{
+  margin-left: 20px;
+}
+.navigation > .logo > img{
+  width: 100px;
+  border-radius: 1px;
+}
+.navigation > .download-img{
+  margin-right: 20px;
+  margin-top: 26px;
+  transition: 0.5s;
+}
+.navigation > .download-img > .save-now:hover{
+  transform: scale(1.01);
+  background-color: rgb(65, 65, 65);;
+  transform-origin: top;
+  box-shadow: 1px 1px 5px rgba(8, 8, 8, 0.219);
+}
+.navigation > .download-img > .save-now{
+  font-size: 20px;
+  padding: 8px;
+  text-decoration: none;
+  background-color: var(--button-color);
+  color: #fff;
+  border-radius: 1px;
+}
+
+.upload-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.upload-btn > .upload-img{
+  padding: 40px;
+}
+.upload-btn > .upload-img > p{
+  font-size: 25px;
+  padding: 5px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+.upload-btn > .upload-img > .upload{
+  background-color: var(--button-color);
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 2px;
+  transition: 0.s;
+}
+.upload-btn > .upload-img > .upload:hover{
+  transform: scale(1.1);
+  color: #fff;
+  background-color: rgb(65, 65, 65);
+  transform-origin: top;
+  box-shadow: 2px 2px 5px rgba(66, 66, 66, 0.329);
+}
+.editor{
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+}
+.editor > .tool{
+  border: 2px solid #CD443F;
+  padding: 100px;
+  width: 50%;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.editor > .tool > .essential-tool{
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+}
+.editor > .tool > .essential-tool > .action-tool{
+  padding: 20px;
+}
+.editor > .tool > .essential-tool > .action-tool > .fas{
+  width: 100px;
+  height: 30px;
+  background-color: #CD443F;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  border-radius: 1px;
+}
+.editor > .tool > .essential-tool > .action-tool > a{
+  text-decoration: none;
+  background-color: #CD443F;
+  padding: 5px;
+  color: #fff;
+  border-radius: 1px;
+}
+.editor > .canvas{
+  padding: 100px;
+  width: 50%;
+  margin: 5px;
+  border: 2px solid #CD443F;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.editor > .canvas > .uploaded-img-container{
+  border: 1px dashed #cd443f6b;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.editor > .canvas > .uploaded-img-container > .fa-cloud-upload-alt{
+  font-size: 100px;
+  color: #cd443f5b;
+  padding: 10px;
+}
+.editor > .canvas > .img-box{
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  padding: 0px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+}
+.footer > .logo > p{
+  margin-left: 10px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+.footer > .logo > p{
+  position: relative;
+  width: 80px;
+}
+.footer > .useful-links{
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 18px;
+}
+.footer > .useful-links > ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.footer > .useful-links > ul > li > a{
+  padding: 10px;
+  margin-left: 20px;
+}
+.footer > .useful-links > ul > li > a > .fab{
+  font-size: 30px;
+}
+.footer > .useful-links > ul > li > a > .fa-facebook{
+  color: #4267B2;
+}
+.footer > .useful-links > ul > li > a > .fa-twitter{
+  color: #1DA1F2;
+}
+.footer > .useful-links > ul > li > a > .fa-instagram{
+  color: #E1306C;
+}
+

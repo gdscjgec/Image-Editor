@@ -2,22 +2,22 @@
 <br />
 <p align="center">
   <a href="https://github.com/gdscjgec">
-    <img src="" alt="Logo" width="80" height="80">
+    <img src="https://edit-photo-demo.netlify.app/assets/logo/logo_gif.gif" alt="Logo" width="200" height="190">
   </a>
 
-  <h3 align="center">Project Name</h3>
+  <h3 align="center">Quick Photo Editor</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A web based photo Editor with essential tool such as cropping , exposure etc.
     <br />
-    <a href=""><strong>Explore the docs »</strong></a>
+    <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://edit-photo-demo.netlify.app/">View Demo</a>
     ·
-    <a href="">Report Bug</a>
+    <a href="#">Report Bug</a>
     ·
-    <a href="">Request Feature</a>
+    <a href="#">Request Feature</a>
   </p>
 </p>
 
@@ -50,66 +50,53 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![click](https://raw.githubusercontent.com/ZiaCodes/testing_ripo/main/assets/Screenshot%202021-09-30%20023614.jpg)
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sequi
-voluptate dicta id. Nulla recusandae voluptatem nostrum officiis, quaerat
-suscipit tempora ducimus, fuga iste eaque esse voluptate. Voluptatem,
-dolores quisquam.
+A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping , contras and exposure etc.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
-- [Laravel](https://laravel.com)
+- [HTML](https://html.spec.whatwg.org/multipage/)
+- [CSS](hhttps://www.w3.org/Style/CSS/Overview.en.html)
+- [JavaScript](https://www.javascript.com/)
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get started just fork the repository and make a clone .
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+You should know the basics of HTML5,CSS3 and Javascript.
 
-- npm
+- From git CLI
   ```sh
-  npm install npm@latest -g
+  git clone url
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## File Structure
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+```
+  ├── assets/
+        ├──fevicon        contains fevicon and shortcut icons
+        ├──img            contains imgs and icons.
+        ├──logo           contains the logo
+  ├── css/
+        ├──style.css      all the default styling of index.html
+  ├── js/
+        ├──main.js        all the functions of index.html
+  ├── index.html          Main page of the website
+```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+---
 
-<!-- ROADMAP -->
-
-## Roadmap
-
-See the [open issues](https://github.com/gdscjgec) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
