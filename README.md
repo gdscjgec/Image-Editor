@@ -85,7 +85,7 @@ You should know the basics of HTML5,CSS3 and Javascript.
 
 ```
   ├── assets/
-        ├──fevicon        contains fevicon and shortcut icons
+        ├──favicon        contains favicon and shortcut icons
         ├──img            contains imgs and icons.
         ├──logo           contains the logo
   ├── css/
