@@ -72,7 +72,7 @@ You should know the basics of HTML5,CSS3 and Javascript.
 
 - From git CLI
   ```sh
-  git clone url
+  git clone https://github.com/gdscjgec/Image-Editor.git
   ```
 
 ### Installation
