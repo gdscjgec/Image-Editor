@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/gdscjgec">
-    <img src="https://edit-photo-demo.netlify.app/assets/logo/logo_gif.gif" alt="Logo" width="500" height="300">
+    <img src="https://edit-photo-demo.netlify.app/assets/logo/logo_gif.gif" alt="Logo" width="100" height="80">
   </a>
 
   <h3 align="center">Quick Photo Editor</h3>
