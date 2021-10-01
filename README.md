@@ -1,8 +1,10 @@
+<div align="center"><a href="https://hacktoberfest.digitalocean.com/"><img src="https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg" alt="Banner" width="60%"/></a></div>
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/gdscjgec">
-    <img src="https://edit-photo-demo.netlify.app/assets/logo/logo_gif.gif" alt="Logo" width="200" height="190">
+    <img src="https://edit-photo-demo.netlify.app/assets/logo/logo_gif.gif" alt="Logo" width="500" height="300">
   </a>
 
   <h3 align="center">Quick Photo Editor</h3>
