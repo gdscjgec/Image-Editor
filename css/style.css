@@ -68,7 +68,7 @@ body{
   color: #fff;
   font-size: 20px;
   padding: 20px;
-  border-radius: 2px;
+  border-radius: 20px;
   transition: 0.s;
 }
 .upload-btn > .upload-img > .upload:hover{
@@ -100,7 +100,7 @@ body{
   display: flex;
 }
 .editor > .tool > .essential-tool > .action-tool{
-  padding: 20px;
+  padding: 9px;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas{
   width: 100px;
@@ -109,7 +109,7 @@ body{
   padding: 10px;
   text-align: center;
   color: #fff;
-  border-radius: 1px;
+  border-radius: 9px;
 }
 .editor > .tool > .essential-tool > .action-tool > a{
   text-decoration: none;
@@ -142,8 +142,8 @@ body{
   padding: 10px;
 }
 .editor > .canvas > .img-box{
-  width: 500px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   position: absolute;
   padding: 0px;
   margin: 10px;
