@@ -15,7 +15,7 @@
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://edit-photo-demo.netlify.app/">View Demo</a>
+    <a href="https://gdscjgec.github.io/Image-Editor/">View Demo</a>
     ·
     <a href="#">Report Bug</a>
     ·
