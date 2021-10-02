@@ -11,6 +11,7 @@
 
 body{
   font-family: 'Noto Sans', sans-serif;
+  overflow-x: hidden;
 }
 .navigation{
   display: flex;
@@ -195,3 +196,55 @@ body{
   color: #E1306C;
 }
 
+/* ------- responsive ------------ */
+@media(max-width:767px){
+  .editor{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 50%;
+    transform: translate(-36%);
+    height: 110vh;
+  }
+  .editor > .tool{
+    height: 100%;
+    width: 70%;
+    order: 2;
+  }
+  .editor > .tool > .essential-tool{
+    top: 50%;
+    transform: translateY(-110%);
+    padding: 20px;
+    margin: 20px;
+  }
+  .editor > .tool > .essential-tool > .action-tool{
+    padding: 10px;
+  }
+  .editor > .tool > .essential-tool > .action-tool > .fas{
+    width: 50px;
+  }
+  .editor > .canvas{
+    order: 1;
+    height: 100%;
+    width: 70%;
+  }
+  .uploaded-img-container{
+    height: 200px;
+    width: 200px;
+  }
+  .editor > .canvas > .img-box{
+    height: 300px;
+    width: 400px;
+    top: 5%;
+    background-size: contain;
+  }
+  .navigation > .download-img > .save-now{
+    position: relative;
+    top: 66rem;
+    right: 152%;
+    padding: 10px;
+  }
+  .footer{
+    margin-top: 100px;
+  }
+}
