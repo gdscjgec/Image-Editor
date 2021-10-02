@@ -40,10 +40,12 @@ fileBtn.addEventListener('change', function(){
         uploaded_img = reader.result;
         const image = new Image();
         image.src = uploaded_img;
-        document.querySelector("div.uploaded-img-container").style.display = "none";
-        canvas.style.display = "block";
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        image.onload = () => {
+            document.querySelector("div.uploaded-img-container").style.display = "none";
+            canvas.style.display = "block";
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        };
     });
     reader.readAsDataURL(this.files[0]);
 });
