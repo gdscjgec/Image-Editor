@@ -34,7 +34,8 @@ body{
   transform: scale(1.01);
   background-color: rgb(65, 65, 65);;
   transform-origin: top;
-  box-shadow: 1px 1px 5px rgba(8, 8, 8, 0.219);
+  transition: all 0.3s ease-in-out;
+  filter: none;
 }
 .navigation > .download-img > .save-now{
   font-size: 20px;
@@ -42,7 +43,9 @@ body{
   text-decoration: none;
   background-color: var(--button-color);
   color: #fff;
-  border-radius: 1px;
+  border-radius: 3px;
+  filter: drop-shadow(2px 2px 2px rgba(8, 8, 8, 0.219));
+  transition: all 0.3s ease-in-out;
 }
 
 .upload-btn{
@@ -68,15 +71,17 @@ body{
   color: #fff;
   font-size: 20px;
   padding: 20px;
-  border-radius: 2px;
-  transition: 0.s;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(3px 3px 3px rgba(66, 66, 66, 0.329));
 }
 .upload-btn > .upload-img > .upload:hover{
   transform: scale(1.1);
   color: #fff;
   background-color: rgb(65, 65, 65);
   transform-origin: top;
-  box-shadow: 2px 2px 5px rgba(66, 66, 66, 0.329);
+  transition: all 0.3s ease-in-out;
+  filter: none;
 }
 .editor{
   display: flex;
@@ -123,7 +128,6 @@ body{
   width: 50%;
   margin: 5px;
   border: 2px solid #CD443F;
-  display: flex;
   justify-content: center;
   overflow: hidden;
 }
@@ -142,12 +146,13 @@ body{
   padding: 10px;
 }
 .editor > .canvas > .img-box{
-  width: 500px;
+  width: auto;
   height: 400px;
+  max-width: 600px;
   position: absolute;
   padding: 0px;
   margin: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-size: cover;
