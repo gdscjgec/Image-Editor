@@ -51,29 +51,29 @@
 
         <!-- handy tool Start here -->
       <div class="essential-tool" id="handy-tool">
-        <div class="action-tool">
-          <i class="fas fa-undo"></i>
+        <div class="action-tool" onclick=unDo()>
+          <i id="undo-btn" class="fas fa-undo disabled"></i>
         </div>
-        <div class="action-tool">
-          <i class="fas fa-redo"></i>
+        <div class="action-tool" onclick=reDo()>
+          <i id="redo-btn" class="fas fa-redo disabled"></i>
         </div>
       </div>
       <!-- handy tool end here -->
 
       <!-- Filter tool end here -->
 
-      <div class="essential-tool" id="essentail-tool">
+      <div class="essential-tool" id="essential-tool">
         <div class="action-tool">
-          <a href="#" onclick=doGreyScale()>GreyScale</a>
+          <div onclick="applyFilter('grey')">GreyScale</div>
         </div>
         <div class="action-tool">
-          <a href="#" onclick=doSepia()>Sepia</a>
+          <div onclick="applyFilter('sepia')">Sepia</div>
         </div>
         <div class="action-tool">
-          <a href="#" onClick=doAmaro()>Amaro</a>
+          <div onclick="applyFilter('amaro')">Amaro</div>
         </div>
         <div class="action-tool">
-          <a href="#" onClick=doLark()>Lark</a>
+          <div onclick="applyFilter('lark')">Lark</div>
         </div>
       </div>
 
