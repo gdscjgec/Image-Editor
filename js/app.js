@@ -1,8 +1,62 @@
 const fileBtn = document.querySelector("#input-field");
 const uploadBtn = document.querySelector("#upload");
 const saveBtn = document.querySelector("#save-now");
+const undoBtn = document.querySelector("#undo-btn");
+const redoBtn = document.querySelector("#redo-btn");
 const canvas = document.querySelector("#img-box");
 const ctx = canvas.getContext("2d");
+const changeControl = {
+    prevImage: null,
+    currentImage: null,
+    nextImage: null,
+};
+
+// Undo last action
+function unDo(){
+    if(changeControl.prevImage){
+        undoBtn.classList.add("disabled");
+        redoBtn.classList.remove("disabled");
+        ctx.putImageData(changeControl.prevImage, 0, 0);
+        changeControl.nextImage = changeControl.currentImage;
+        changeControl.currentImage = changeControl.prevImage;
+        changeControl.prevImage = null;
+    }
+}
+
+// Redo last action
+function reDo(){
+    if(changeControl.nextImage){
+        redoBtn.classList.add("disabled");
+        undoBtn.classList.remove("disabled");
+        ctx.putImageData(changeControl.nextImage, 0, 0);
+        changeControl.prevImage = changeControl.currentImage;
+        changeControl.currentImage = changeControl.nextImage;
+        changeControl.nextImage = null;
+    }
+}
+
+//Function to call specific filters and do change control, add new cases for new filters
+function applyFilter(filter){
+    redoBtn.classList.add("disabled");
+    undoBtn.classList.remove("disabled");
+    changeControl.nextImage = null;
+    changeControl.prevImage = changeControl.currentImage;
+    switch(filter){
+        case "grey":
+            doGreyScale();
+            break;
+        case "sepia":
+            doSepia();
+            break;
+        case "lark":
+            doLark();
+            break;
+        case "amaro":
+            doAmaro();
+            break;
+    }
+    changeControl.currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
 
 //global variable 
 var uploaded_img = "";
@@ -113,6 +167,7 @@ fileBtn.addEventListener('change', function(){
             canvas.style.display = "block";
             ctx.clearRect(0,0,canvas.width,canvas.height);
             ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            changeControl.currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
         };
     });
     reader.readAsDataURL(this.files[0]);
