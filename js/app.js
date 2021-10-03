@@ -37,6 +37,16 @@ function doSepia(){
     ctx.putImageData(imageData, 0, 0);
 }
 
+//Simple algorithm to convert image to Lark
+function doLark(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    brightness(data,0.08);
+    rgbAdjust(data,[1,1.03,1.05]);
+    saturation(data,0.12);
+    ctx.putImageData(imageData, 0, 0);
+}
+
 function brightness(data,val){
     if(val<=-1){
         val=-1;
