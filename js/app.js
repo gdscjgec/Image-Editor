@@ -47,6 +47,7 @@ function doLark(){
     ctx.putImageData(imageData, 0, 0);
 }
 
+//Simple algorithm to convert image to Amaro
 function doAmaro(){
     var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     var data = imageData.data;
