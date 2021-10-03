@@ -130,7 +130,7 @@ body{
   cursor: not-allowed;
 }
 .editor > .canvas{
-  padding: 100px;
+  padding: 20px;
   width: 50%;
   margin: 5px;
   border: 2px solid #CD443F;
@@ -152,12 +152,9 @@ body{
   padding: 10px;
 }
 .editor > .canvas > .img-box{
-  width: auto;
-  height: 400px;
-  max-width: 600px;
-  position: absolute;
+  width: 100%;
+  height: 100%;
   padding: 0px;
-  margin: 10px;
   display: none;
   justify-content: center;
   align-items: center;
