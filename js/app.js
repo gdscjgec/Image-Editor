@@ -56,6 +56,7 @@ function doAmaro(){
     ctx.putImageData(imageData, 0, 0);
 }
 
+//val should be from -1 to 1 and 0 for unchanged
 function brightness(data,val){
     if(val<=-1){
         val=-1;
@@ -69,6 +70,7 @@ function brightness(data,val){
     }
 }
 
+//val should be -1 to positive number and 0 is for unchanged
 function saturation(data,val){
     if(val<=-1){
         val=-1;
@@ -81,6 +83,7 @@ function saturation(data,val){
     }
 }
 
+//RGB Adjust
 function rgbAdjust(data,vals){
     for(let i=0;i<data.length;i+=4){
         data[i]*=vals[0];
