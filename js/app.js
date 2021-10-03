@@ -47,6 +47,14 @@ function doLark(){
     ctx.putImageData(imageData, 0, 0);
 }
 
+function doAmaro(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    brightness(data,0.15);
+    saturation(data,0.3);
+    ctx.putImageData(imageData, 0, 0);
+}
+
 function brightness(data,val){
     if(val<=-1){
         val=-1;
