@@ -125,10 +125,6 @@ body{
   border-radius: 1px;
   cursor: pointer;
 }
-.editor > .tool > .essential-tool > .action-tool > div.disabled{
-  background-color: #443534;
-  cursor: not-allowed;
-}
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled{
   background-color: #443534;
   cursor: not-allowed;
