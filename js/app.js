@@ -25,6 +25,18 @@ function doGreyScale(){
     ctx.putImageData(imageData, 0, 0);
 }
 
+//Simple algorithm to convert image to Sepia
+function doSepia(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i = 0; i < data.length; i += 4){
+        data[i]*=1.07;
+        data[i + 1]*=0.74;
+        data[i + 2]*=0.43;
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+
 //Save Image from Canvas
 saveBtn.addEventListener("click", function(){
     const downloadImg = canvas.toDataURL("image/png");
