@@ -10,7 +10,8 @@
   <h3 align="center">Quick Photo Editor</h3>
 
   <p align="center">
-    A web based photo Editor with essential tool such as cropping , exposure etc.
+    A web based photo Editor with essential tool such as cropping , exposure etc
+  
     <br />
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
