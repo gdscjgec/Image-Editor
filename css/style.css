@@ -83,6 +83,9 @@ body{
   transform-origin: top;
   transition: all 0.3s ease-in-out;
   filter: none;
+  box-shadow : inset 300px 0 0 0 #f9e506;
+  cursor : pointer;
+  color : #000;
 }
 .editor{
   display: flex;
