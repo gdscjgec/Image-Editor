@@ -152,7 +152,6 @@ saveBtn.addEventListener("click", function(){
     const downloadImg = canvas.toDataURL("image/png");
     saveBtn.href = downloadImg;
     saveBtn.download = "image.png";
-    saveBtn.click();
 });
 
 //Rendering user Generated Image onto Canvas
