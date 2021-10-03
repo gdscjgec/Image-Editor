@@ -37,6 +37,40 @@ function doSepia(){
     ctx.putImageData(imageData, 0, 0);
 }
 
+function brightness(data,val){
+    if(val<=-1){
+        val=-1;
+    }
+    if(val>=1){
+        val=1;
+    }
+    val=~~(255*val);
+    for(let i=0;i<data.length;i+=1){
+        data[i]+=val;
+    }
+}
+
+function saturation(data,val){
+    if(val<=-1){
+        val=-1;
+    }
+    for(let i=0;i<data.length;i+=4){
+        let gray=0.2989*data[i]+0.1140*data[i+2]+0.5870*data[i+1];
+        data[i]= -gray*val+data[i]*(1+val);
+        data[i+1]= -gray*val+data[i+1]*(1+val);
+        data[i+2]= -gray*val+data[i+2]*(1+val);
+    }
+}
+
+function rgbAdjust(data,vals){
+    for(let i=0;i<data.length;i+=4){
+        data[i]*=vals[0];
+        data[i+1]*=vals[1];
+        data[i+2]*=vals[2];
+    }
+}
+
+
 //Save Image from Canvas
 saveBtn.addEventListener("click", function(){
     const downloadImg = canvas.toDataURL("image/png");
