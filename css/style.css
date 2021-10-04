@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition:all .3s cubic-bezier(.38,1.15,.7,1.12);
   
 }
-:root{
+
+:root {
+  --button-color: #cd443f;
   --primary-text-color:#222;
   --secondary-text-color:white;
   --button-color: #CD443F;
   --primary-bg-color:#fff;
 }
 
-body{
-  font-family: 'Noto Sans', sans-serif;
+body {
+  font-family: "Noto Sans", sans-serif;
   overflow-x: hidden;
   background:var(--primary-bg-color) ;
 }
@@ -55,28 +57,27 @@ body.dark-theme{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-
 }
-.navigation > .logo{
+.navigation > .logo {
   margin-left: 20px;
 }
-.navigation > .logo > img{
+.navigation > .logo > img {
   width: 100px;
   border-radius: 1px;
 }
-.navigation > .download-img{
+.navigation > .download-img {
   margin-right: 20px;
   margin-top: 26px;
   transition: 0.5s;
 }
-.navigation > .download-img > .save-now:hover{
+.navigation > .download-img > .save-now:hover {
   transform: scale(1.01);
-  background-color: rgb(65, 65, 65);;
+  background-color: rgb(65, 65, 65);
   transform-origin: top;
   transition: all 0.3s ease-in-out;
   filter: none;
 }
-.navigation > .download-img > .save-now{
+.navigation > .download-img > .save-now {
   font-size: 20px;
   padding: 8px;
   text-decoration: none;
@@ -87,7 +88,7 @@ body.dark-theme{
   transition: all 0.3s ease-in-out;
 }
 
-.upload-btn{
+.upload-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,16 +96,16 @@ body.dark-theme{
   width: 100%;
   margin-top: 10px;
 }
-.upload-btn > .upload-img{
+.upload-btn > .upload-img {
   padding: 40px;
 }
-.upload-btn > .upload-img > p{
+.upload-btn > .upload-img > p {
   font-size: 25px;
   padding: 5px;
   margin-bottom: 40px;
   font-weight: 500;
 }
-.upload-btn > .upload-img > .upload{
+.upload-btn > .upload-img > .upload {
   background-color: var(--button-color);
   text-decoration: none;
   color:var(--secondary-text-color);
@@ -114,7 +115,7 @@ body.dark-theme{
   transition: all 0.3s ease-in-out;
   filter: drop-shadow(3px 3px 3px rgba(66, 66, 66, 0.329));
 }
-.upload-btn > .upload-img > .upload:hover{
+.upload-btn > .upload-img > .upload:hover {
   transform: scale(1.1);
   color: #fff;
   background-color: rgb(65, 65, 65);
@@ -122,13 +123,13 @@ body.dark-theme{
   transition: all 0.3s ease-in-out;
   filter: none;
 }
-.editor{
+.editor {
   display: flex;
   flex-direction: row;
   height: 80vh;
 }
-.editor > .tool{
-  border: 2px solid #CD443F;
+.editor > .tool {
+  border: 2px solid #cd443f;
   padding: 100px;
   width: 50%;
   margin: 5px;
@@ -136,28 +137,43 @@ body.dark-theme{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow: scroll;
 }
-.editor > .tool > .essential-tool{
+.editor > .tool > .essential-tool {
   padding: 20px;
   margin: 20px;
   display: flex;
 }
-.editor > .tool > .essential-tool > .action-tool{
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  /* background: #1da1f2; */
+}
+
+.editor > .tool > .essential-tool > .action-tool {
   padding: 20px;
 }
-.editor > .tool > .essential-tool > .action-tool > .fas{
+.editor > .tool > .essential-tool > .action-tool > .fas {
   width: 100px;
   height: 30px;
-  background-color: #CD443F;
+  background-color: #cd443f;
   padding: 10px;
   text-align: center;
   color: #fff;
   border-radius: 1px;
 }
+.editor > .tool > .essential-tool > .action-tool > a {
+text-decoration: none;
+  background-color: #cd443f;
+  padding: 5px;
+  color: #fff;
+  border-radius: 1px;
+  cursor: pointer;
+}
 .editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
-  background-color: #CD443F;
+  background-color: #cd443f;
   padding: 5px;
   color: #fff;
   border-radius: 1px;
@@ -168,14 +184,14 @@ body.dark-theme{
   cursor: not-allowed;
 }
 .editor > .canvas{
-  padding: 20px;
+  padding: 20px
   width: 50%;
   margin: 5px;
-  border: 2px solid #CD443F;
+  border: 2px solid #cd443f;
   justify-content: center;
   overflow: hidden;
 }
-.editor > .canvas > .uploaded-img-container{
+.editor > .canvas > .uploaded-img-container {
   border: 1px dashed #cd443f6b;
   width: 100%;
   display: flex;
@@ -184,14 +200,16 @@ body.dark-theme{
   align-items: center;
   overflow: hidden;
 }
-.editor > .canvas > .uploaded-img-container > .fa-cloud-upload-alt{
+.editor > .canvas > .uploaded-img-container > .fa-cloud-upload-alt {
   font-size: 100px;
   color: #cd443f5b;
   padding: 10px;
 }
-.editor > .canvas > .img-box{
-  width: 100%;
-  height: 100%;
+.editor > .canvas > .img-box {
+  width: auto;
+  height: 400px;
+  max-width: 600px;
+  position: absolute;
   padding: 0px;
   display: none;
   justify-content: center;
@@ -201,49 +219,49 @@ body.dark-theme{
   background-repeat: no-repeat;
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: space-between;
 }
-.footer > .logo > p{
+.footer > .logo > p {
   margin-left: 10px;
   margin-top: 20px;
   font-weight: 700;
 }
-.footer > .logo > p{
+.footer > .logo > p {
   position: relative;
   width: 80px;
 }
-.footer > .useful-links{
+.footer > .useful-links {
   padding: 10px;
   margin-left: 20px;
   margin-top: 18px;
 }
-.footer > .useful-links > ul{
+.footer > .useful-links > ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
 }
-.footer > .useful-links > ul > li > a{
+.footer > .useful-links > ul > li > a {
   padding: 10px;
   margin-left: 20px;
 }
-.footer > .useful-links > ul > li > a > .fab{
+.footer > .useful-links > ul > li > a > .fab {
   font-size: 30px;
 }
-.footer > .useful-links > ul > li > a > .fa-facebook{
-  color: #4267B2;
+.footer > .useful-links > ul > li > a > .fa-facebook {
+  color: #4267b2;
 }
-.footer > .useful-links > ul > li > a > .fa-twitter{
-  color: #1DA1F2;
+.footer > .useful-links > ul > li > a > .fa-twitter {
+  color: #1da1f2;
 }
-.footer > .useful-links > ul > li > a > .fa-instagram{
-  color: #E1306C;
+.footer > .useful-links > ul > li > a > .fa-instagram {
+  color: #e1306c;
 }
 
 /* ------- responsive ------------ */
-@media(max-width:767px){
-  .editor{
+@media (max-width: 767px) {
+  .editor {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -251,45 +269,45 @@ body.dark-theme{
     transform: translate(-36%);
     height: 110vh;
   }
-  .editor > .tool{
+  .editor > .tool {
     height: 100%;
     width: 70%;
     order: 2;
   }
-  .editor > .tool > .essential-tool{
+  .editor > .tool > .essential-tool {
     top: 50%;
     transform: translateY(-110%);
     padding: 20px;
     margin: 20px;
   }
-  .editor > .tool > .essential-tool > .action-tool{
+  .editor > .tool > .essential-tool > .action-tool {
     padding: 10px;
   }
-  .editor > .tool > .essential-tool > .action-tool > .fas{
+  .editor > .tool > .essential-tool > .action-tool > .fas {
     width: 50px;
   }
-  .editor > .canvas{
+  .editor > .canvas {
     order: 1;
     height: 100%;
     width: 70%;
   }
-  .uploaded-img-container{
+  .uploaded-img-container {
     height: 200px;
     width: 200px;
   }
-  .editor > .canvas > .img-box{
+  .editor > .canvas > .img-box {
     height: 300px;
     width: 400px;
     top: 5%;
     background-size: contain;
   }
-  .navigation > .download-img > .save-now{
+  .navigation > .download-img > .save-now {
     position: relative;
     top: 66rem;
     right: 152%;
     padding: 10px;
   }
-  .footer{
+  .footer {
     margin-top: 100px;
   }
 }
