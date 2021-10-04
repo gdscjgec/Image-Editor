@@ -4,16 +4,56 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition:all .3s cubic-bezier(.38,1.15,.7,1.12);
+  
 }
+
 :root {
   --button-color: #cd443f;
+  --primary-text-color:#222;
+  --secondary-text-color:white;
+  --button-color: #CD443F;
+  --primary-bg-color:#fff;
 }
 
 body {
   font-family: "Noto Sans", sans-serif;
   overflow-x: hidden;
+  background:var(--primary-bg-color) ;
 }
-.navigation {
+p{
+  color: var(--primary-text-color);
+}
+
+body.dark-theme{
+  --primary-bg-color:#252C48;
+  --primary-text-color:#4C84FF;
+  --secondary-text-color:cyan;
+}
+
+
+#theme-toggler{
+  position: fixed;
+  top: 8rem; right: 1rem;
+  font-size: 18px;
+  z-index: 998;
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  background:var(--button-color);
+  color:#fff;
+  cursor: pointer;
+  border-radius: 5rem;
+
+}
+
+#theme-toggler.fa-sun{
+  transform:rotate(-180deg);
+}
+
+
+.navigation{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -42,7 +82,7 @@ body {
   padding: 8px;
   text-decoration: none;
   background-color: var(--button-color);
-  color: #fff;
+  color:var(--secondary-text-color);
   border-radius: 3px;
   filter: drop-shadow(2px 2px 2px rgba(8, 8, 8, 0.219));
   transition: all 0.3s ease-in-out;
@@ -68,7 +108,7 @@ body {
 .upload-btn > .upload-img > .upload {
   background-color: var(--button-color);
   text-decoration: none;
-  color: #fff;
+  color:var(--secondary-text-color);
   font-size: 20px;
   padding: 20px;
   border-radius: 3px;
@@ -124,14 +164,27 @@ body {
   border-radius: 1px;
 }
 .editor > .tool > .essential-tool > .action-tool > a {
+text-decoration: none;
+  background-color: #cd443f;
+  padding: 5px;
+  color: #fff;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
   background-color: #cd443f;
   padding: 5px;
   color: #fff;
   border-radius: 1px;
+  cursor: pointer;
 }
-.editor > .canvas {
-  padding: 100px;
+.editor > .tool > .essential-tool > .action-tool > .fas.disabled{
+  background-color: #443534;
+  cursor: not-allowed;
+}
+.editor > .canvas{
+  padding: 20px
   width: 50%;
   margin: 5px;
   border: 2px solid #cd443f;
@@ -158,7 +211,6 @@ body {
   max-width: 600px;
   position: absolute;
   padding: 0px;
-  margin: 10px;
   display: none;
   justify-content: center;
   align-items: center;

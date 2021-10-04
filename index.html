@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Quick photo Edito | Edit your photo Quickly</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -27,15 +24,26 @@
       href="./assets/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
   </head>
-  <body>
+  <body>  
     <section class="navigation">
       <div class="logo">
         <img src="./assets/logo/logo_gif.gif" alt="logo" />
       </div>
+
+      <div id="theme-toggler" class="fas fa-moon"></div>
+
       <div class="download-img">
         <a href="#" class="save-now" id="save-now">Save Now</a>
       </div>
+      
     </section>
 
     <section class="upload-btn">
@@ -80,11 +88,16 @@
           <div class="action-tool">
             <i class="fas fa-redo"></i>
           </div>
+        <div class="essential-tool" id="handy-tool">
+        <div class="action-tool" onclick=unDo()>
+          <i id="undo-btn" class="fas fa-undo disabled"></i>
+        </div>
+        <div class="action-tool" onclick=reDo()>
+          <i id="redo-btn" class="fas fa-redo disabled"></i>
         </div>
         <!-- handy tool end here -->
 
         <!-- Filter tool end here -->
-
         <div class="essential-tool filters" id="essentail-tool">
           <div class="action-tool">
             <a href="#">GreyScale</a>
@@ -126,20 +139,22 @@
             <input type="range" />
           </div>
           <div class="action-tool">
-            <a
-              href="#"
-              id="lark"
-              class="slider"
-              name="lark"
-              type="range"
-              min="0"
-              max="100"
-              value="0"
-              onClick="doLark()"
-              >Lark</a
-            >
+            <a href="#" id="lark" class="slider" name="lark" type="range" min="0" max="100" value="0" onClick="doLark()">Lark</a>
             <input type="range" />
           </div>
+
+      <div class="essential-tool" id="essential-tool">
+        <div class="action-tool">
+          <div onclick="applyFilter('grey')">GreyScale</div>
+        </div>
+        <div class="action-tool">
+          <div onclick="applyFilter('sepia')">Sepia</div>
+        </div>
+        <div class="action-tool">
+          <div onclick="applyFilter('amaro')">Amaro</div>
+        </div>
+        <div class="action-tool">
+          <div onclick="applyFilter('lark')">Lark</div>
         </div>
 
         <!-- Filter tool End here -->
