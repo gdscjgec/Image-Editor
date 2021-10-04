@@ -11,6 +11,12 @@ const changeControl = {
     nextImage: null,
 };
 
+$('#theme-toggler').click(function(){
+         $(this).toggleClass('fa-sun');
+         $('body').toggleClass('dark-theme');
+});
+
+
 // Undo last action
 function unDo(){
     if(changeControl.prevImage){
@@ -22,6 +28,8 @@ function unDo(){
         changeControl.prevImage = null;
     }
 }
+
+
 
 // Redo last action
 function reDo(){
