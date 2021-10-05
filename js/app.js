@@ -11,11 +11,11 @@ const changeControl = {
     nextImage: null,
 };
 
-$('#theme-toggler').click(function(){
-         $(this).toggleClass('fa-sun');
-         $('body').toggleClass('dark-theme');
-});
+const themeSwitch = document.querySelector('input');
 
+themeSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('dark-theme');
+});
 
 // Undo last action
 function unDo(){
