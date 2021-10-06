@@ -49,8 +49,8 @@ body.dark-theme{
   transition: 0.5s;
 }
 .navigation > .download-img > .save-now:hover{
-  transform: scale(1.01);
-  background-color: rgb(65, 65, 65);;
+  transform: scale(1.02);
+  background-color: rgb(65, 65, 65);
   transform-origin: top;
   transition: all 0.3s ease-in-out;
   filter: none;
@@ -107,7 +107,7 @@ body.dark-theme{
   border-radius: 67px;
   font-weight: bold;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  border:2px solid rgba(104, 184, 187, 0.568);
+  border:1.9px solid rgba(104, 184, 187, 0.568);
  /* background: linear-gradient(45deg,rgba(255, 255, 0, 0.815),rgba(255, 166, 0, 0.76)); */
  background-color: black;
   box-shadow: 0.4rem 0.4rem 0.8rem rgb(150, 73, 137);
