@@ -101,6 +101,24 @@ body.dark-theme{
   transition: all 0.3s ease-in-out;
   filter: none;
 }
+#upload{
+  color:white;
+  text-shadow: 2px 1px rgb(228, 90, 10);
+  border-radius: 67px;
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border:2px solid rgba(104, 184, 187, 0.568);
+ /* background: linear-gradient(45deg,rgba(255, 255, 0, 0.815),rgba(255, 166, 0, 0.76)); */
+ background-color: black;
+  box-shadow: 0.4rem 0.4rem 0.8rem rgb(150, 73, 137);
+  animation: uploadanimate 5s linear infinite;
+  transition: box-shadow 2s ease-in-out;
+}
+@keyframes uploadanimate {
+  50%{
+  box-shadow: -0.4rem -0.4rem 0.8rem rgba(11, 201, 144, 0.671);
+  }
+}
 .editor{
   display: flex;
   flex-direction: row;
@@ -126,25 +144,52 @@ body.dark-theme{
   padding: 20px;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas{
-  width: 100px;
+  /* width: 100px;
   height: 30px;
-  background-color: #CD443F;
-  padding: 10px;
+  background-color: #CD443F; */
+  cursor: pointer;
+  background: linear-gradient(45deg,rgb(255, 0, 157),rgb(240, 133, 186));
+  padding: 12px;
   text-align: center;
-  color: #fff;
-  border-radius: 1px;
+  color: rgb(255, 247, 252);
+  border-radius: 10px;
+  transform: perspective(900px) rotateY(0deg);
+  box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
+}
+.editor > .tool > .essential-tool > .action-tool > .fas:hover{
+  background: black;
+  transform: perspective(900px) rotateY(30deg);
+
 }
 .editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
   background-color: #CD443F;
   padding: 5px;
-  color: #fff;
-  border-radius: 1px;
+  border:1px solid rgba(112, 6, 86, 0.932);
+ border-radius: 15px;
+   color: rgb(85, 8, 72);
+  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
+  background: linear-gradient(45deg,rgb(83, 82, 82),pink);
+  animation: animate 2s linear infinite;
+  transition: box-shadow 2s ease-in;
+}
+@keyframes animate {
+  50%{
+  
+    box-shadow: 0.2rem 0.2rem 0.8rem rgb(133, 122, 122);
+    transition: box-shadow 2s ease-in;
+   
+  }
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled{
-  background-color: #443534;
+  background: black;
+  box-shadow: 0.1rem 0.1rem 0.7rem rgb(235, 25, 172);
   cursor: not-allowed;
+}
+.editor > .tool > .essential-tool > .action-tool > .fas.disabled:hover{
+  background: rgba(235, 11, 116, 0.781);
 }
 .editor > .canvas{
   padding: 20px;
