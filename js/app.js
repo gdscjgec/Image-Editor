@@ -11,6 +11,12 @@ const changeControl = {
     nextImage: null,
 };
 
+const themeSwitch = document.querySelector('input');
+
+themeSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('dark-theme');
+});
+
 // Undo last action
 function unDo(){
     if(changeControl.prevImage){
@@ -22,6 +28,8 @@ function unDo(){
         changeControl.prevImage = null;
     }
 }
+
+
 
 // Redo last action
 function reDo(){
