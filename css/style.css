@@ -125,7 +125,7 @@ body.dark-theme{
   height: 80vh;
 }
 .editor > .tool{
-  border: 2px solid #CD443F;
+  
   padding: 100px;
   width: 50%;
   margin: 5px;
@@ -195,7 +195,7 @@ body.dark-theme{
   padding: 20px;
   width: 50%;
   margin: 5px;
-  border: 2px solid #CD443F;
+  
   justify-content: center;
   overflow: hidden;
 }
