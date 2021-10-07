@@ -11,19 +11,30 @@
   --primary-text-color:#222;
   --secondary-text-color:white;
   --button-color: #CD443F;
-  --primary-bg-color:#fff;
+  --primary-bg-color:rgb(241, 241, 241);
+  --background-light-mode-img: url("../assets/images/light-mode-bg.jpg");
+  --background-dark-mode-img: url("../assets/images/dark-mode-bg.jpg");
 }
 
 body{
   font-family: 'Noto Sans', sans-serif;
   overflow-x: hidden;
   background:var(--primary-bg-color) ;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), var(--background-light-mode-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: inherit;
+  text-align: center;
+  padding: 2% 5%;
 }
 p{
   color: var(--primary-text-color);
 }
 
 body.dark-theme{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255,255,255,.5)), var(--background-dark-mode-img);
+  background-repeat: no-repeat;
+  background-size: cover;
   --primary-bg-color:#222;
   --primary-text-color:#fff;
   --secondary-text-color:#fff;
@@ -36,12 +47,11 @@ body.dark-theme{
   margin-top: 20px;
 
 }
-.navigation > .logo{
-  margin-left: 20px;
-}
 .navigation > .logo > img{
   width: 100px;
   border-radius: 1px;
+  border-radius: 20px;
+  opacity: 0.9;
 }
 .navigation > .download-img{
   margin-right: 20px;
@@ -57,6 +67,7 @@ body.dark-theme{
 }
 .navigation > .download-img > .save-now{
   font-size: 20px;
+  
   padding: 8px;
   text-decoration: none;
   background-color: var(--button-color);
@@ -72,10 +83,14 @@ body.dark-theme{
   align-items: center;
   text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 0;
+  margin-bottom: 5%;
 }
 .upload-btn > .upload-img{
-  padding: 40px;
+  padding: 10px;
+}
+#upload-tag{
+  margin-bottom: 15%;
 }
 .upload-btn > .upload-img > p{
   font-size: 25px;
@@ -119,15 +134,15 @@ body.dark-theme{
   box-shadow: -0.4rem -0.4rem 0.8rem rgba(11, 201, 144, 0.671);
   }
 }
+
 .editor{
-  display: flex;
-  flex-direction: row;
   height: 80vh;
+  text-align: center;
 }
 .editor > .tool{
   
-  padding: 100px;
-  width: 50%;
+  /* padding: 100px; */
+  width: 100%;
   margin: 5px;
   display: flex;
   justify-content: center;
@@ -175,6 +190,11 @@ body.dark-theme{
   animation: animate 2s linear infinite;
   transition: box-shadow 2s ease-in;
 }
+
+/* Adding text on button hovers */
+.action-tool p{
+  margin-top: 20%;
+}
 @keyframes animate {
   50%{
   
@@ -195,13 +215,14 @@ body.dark-theme{
   padding: 20px;
   width: 50%;
   margin: 5px;
-  
-  justify-content: center;
-  overflow: hidden;
+  text-align: center;
+  margin-left: 25%;
 }
 .editor > .canvas > .uploaded-img-container{
+  text-align: center;
   border: 1px dashed #cd443f6b;
   width: 100%;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,7 +231,7 @@ body.dark-theme{
 }
 .editor > .canvas > .uploaded-img-container > .fa-cloud-upload-alt{
   font-size: 100px;
-  color: #cd443f5b;
+  color: #dd8a89;
   padding: 10px;
 }
 .editor > .canvas > .img-box{
@@ -231,7 +252,7 @@ body.dark-theme{
 }
 .footer > .logo > p{
   margin-left: 10px;
-  margin-top: 20px;
+  
   font-weight: 700;
 }
 .footer > .logo > p{
@@ -258,21 +279,30 @@ body.dark-theme{
 .footer > .useful-links > ul > li > a > .fa-facebook{
   color: #4267B2;
 }
+.footer > .useful-links > ul > li > a > .fa-facebook:hover{
+  color:black;
+}
 .footer > .useful-links > ul > li > a > .fa-twitter{
   color: #1DA1F2;
 }
+.footer > .useful-links > ul > li > a > .fa-twitter:hover{
+  color: black;
+}
 .footer > .useful-links > ul > li > a > .fa-instagram{
   color: #E1306C;
+}
+.footer > .useful-links > ul > li > a > .fa-instagram:hover{
+  color: black;
 }
 
 /* ------- responsive ------------ */
 @media(max-width:767px){
   .editor{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     position: relative;
     left: 50%;
-    transform: translate(-36%);
+    transform: translate(-39%);
     height: 110vh;
   }
   .editor > .tool{
@@ -293,9 +323,9 @@ body.dark-theme{
     width: 50px;
   }
   .editor > .canvas{
-    order: 1;
-    height: 100%;
+    transform: translate(-25%);
     width: 70%;
+    margin-bottom: 5%;
   }
   .uploaded-img-container{
     height: 200px;
