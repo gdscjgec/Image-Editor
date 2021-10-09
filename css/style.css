@@ -37,7 +37,7 @@ body.dark-theme{
   background-size: cover;
   --primary-bg-color:#222;
   --primary-text-color:#fff;
-  --secondary-text-color:#fff;
+  --secondary-text-color:#222;
 }
 
 
