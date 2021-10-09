@@ -76,7 +76,6 @@ body.dark-theme{
   filter: drop-shadow(2px 2px 2px rgba(8, 8, 8, 0.219));
   transition: all 0.3s ease-in-out;
 }
-
 .upload-btn{
   display: flex;
   justify-content: center;
@@ -99,40 +98,40 @@ body.dark-theme{
   font-weight: 500;
 }
 .upload-btn > .upload-img > .upload{
-  background-color: var(--button-color);
+  padding: 20px 15px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
   text-decoration: none;
-  color:var(--secondary-text-color);
-  font-size: 20px;
-  padding: 20px;
-  border-radius: 3px;
-  transition: all 0.3s ease-in-out;
-  filter: drop-shadow(3px 3px 3px rgba(66, 66, 66, 0.329));
+  background: var(--primary-text-color);
+  color: var(--secondary-text-color);
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .20s;
+  border-radius: 67px;
+  box-shadow: 0.1rem 0.4rem 0.8rem rgb(150 73 137);
+}
+.upload-btn > .upload-img > .upload span{
+  position: relative;
+  z-index: 2;
+}
+.upload-btn > .upload-img > .upload:after{
+  position: absolute;
+  content: "";
+  border-radius: 67px;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgb(255, 0, 157);
+  transition: all .20s;
 }
 .upload-btn > .upload-img > .upload:hover{
-  transform: scale(1.1);
   color: #fff;
-  background-color: rgb(65, 65, 65);
-  transform-origin: top;
-  transition: all 0.3s ease-in-out;
-  filter: none;
 }
-#upload{
-  color:white;
-  text-shadow: 2px 1px rgb(228, 90, 10);
-  border-radius: 67px;
-  font-weight: bold;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  border:1.9px solid rgba(104, 184, 187, 0.568);
- /* background: linear-gradient(45deg,rgba(255, 255, 0, 0.815),rgba(255, 166, 0, 0.76)); */
- background-color: black;
-  box-shadow: 0.4rem 0.4rem 0.8rem rgb(150, 73, 137);
-  animation: uploadanimate 5s linear infinite;
-  transition: box-shadow 2s ease-in-out;
-}
-@keyframes uploadanimate {
-  50%{
-  box-shadow: -0.4rem -0.4rem 0.8rem rgba(11, 201, 144, 0.671);
-  }
+.upload-btn > .upload-img > .upload:hover:after{
+  width: 100%;
 }
 
 .editor{
