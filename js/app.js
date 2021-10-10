@@ -43,6 +43,12 @@ function reDo(){
     }
 }
 
+// Remove image btn click
+function remove()
+{
+var element = document.getElementById("img-box").style.display='none';
+}
+
 //Function to call specific filters and do change control, add new cases for new filters
 function applyFilter(filter){
     redoBtn.classList.add("disabled");
