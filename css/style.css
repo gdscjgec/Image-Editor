@@ -14,6 +14,7 @@
   --primary-bg-color:rgb(241, 241, 241);
   --background-light-mode-img: url("../assets/images/light-mode-bg.jpg");
   --background-dark-mode-img: url("../assets/images/dark-mode-bg.jpg");
+  --turn : 0deg;
 }
 
 body{
@@ -409,5 +410,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
-
+#img-box {
+  -webkit-transform:rotate( var(--turn) );
+  -moz-transform: rotate( var(--turn) );
+  -ms-transform: rotate( var(--turn) );
+  -o-transform: rotate( var(--turn) );
+  transform: rotate( var(--turn) );
+}
