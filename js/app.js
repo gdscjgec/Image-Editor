@@ -17,6 +17,18 @@ themeSwitch.addEventListener('change', () => {
   document.body.classList.toggle('dark-theme');
 });
 
+// Rotate image on cick 
+const Root = document.documentElement
+const gRoot = getComputedStyle(Root)
+
+var RotateDeg = parseInt(gRoot.getPropertyValue('--turn'))
+
+function rotate()
+{
+  RotateDeg = (RotateDeg+90) % 360
+  Root.style.setProperty('--turn', RotateDeg + "deg")
+}
+
 // Undo last action
 function unDo(){
     if(changeControl.prevImage){
