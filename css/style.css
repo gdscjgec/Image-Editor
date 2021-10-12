@@ -24,6 +24,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: inherit;
+  background-attachment: fixed;
   text-align: center;
   padding: 2% 5%;
 }
@@ -37,6 +38,7 @@ body.dark-theme{
   background-size: cover;
   --primary-bg-color:#222;
   --primary-text-color:#fff;
+  background-attachment: fixed;
   --secondary-text-color:#222;
 }
 
@@ -167,6 +169,7 @@ body.dark-theme{
   text-align: center;
   color: rgb(255, 247, 252);
   border-radius: 10px;
+  
   transform: perspective(900px) rotateY(0deg);
   box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
 }
@@ -233,6 +236,14 @@ body.dark-theme{
   color: #dd8a89;
   padding: 10px;
 }
+.uploaded-img-container{
+  height: 200px;
+  width: 200px;
+  transition: transform 0.8s ease-in-out;
+ }
+.uploaded-img-container:hover{
+  transform:rotate(360);
+ }
 .editor > .canvas > .img-box{
   width: 100%;
   height: 100%;
