@@ -635,6 +635,9 @@ input:checked + .slider:before {
 @media screen and (max-width: 450px){
   .navigation > .theme-switch-wrapper{
     margin-left: 0px;
+    position: absolute;
+    top: 0;
+    right: 10%;
   }
   .tool > .essential-tool{
     /* flex-direction: column; */
