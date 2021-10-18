@@ -43,7 +43,6 @@ body.dark-theme{
   --secondary-text-color:#222;
 }
 
-
 .navigation{
   display: flex;
   justify-content: space-between;
@@ -371,10 +370,8 @@ font-size: 20px;
 }
 
 /* ------- responsive ------------ */
-@media(max-width:767px){
+/* @media(max-width:767px){
   .editor{
-    /* display: flex;
-    flex-direction: column; */
     position: relative;
     left: 50%;
     transform: translate(-39%);
@@ -416,7 +413,7 @@ font-size: 20px;
   .footer{
     margin-top: 100px;
   }
-}
+} */
 
 
 .theme-switch-wrapper {
@@ -614,11 +611,51 @@ input:checked + .slider:before {
 }
 
 
-.social-icon--github .tooltip{
-  background: #4284c0;
-  columns: currentColor;
+
+/* -----------responsive---------- */
+@media screen and (max-width: 1514px){
+  .navigation > .theme-switch-wrapper{
+    margin-left: 0px;
+  }
 }
-/* icon after effect */
-.social-icon--github .tooltip::after{
-  border-top-color: #4284c0;
+@media screen and (max-width: 900px){
+  .footer{
+    position: absolute;
+    bottom: -500px;
+  }
+}
+@media screen and (max-width: 850px){
+  .editor > .canvas{
+    padding: 20px;
+    width: 100%;
+    margin: 5px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 450px){
+  .navigation > .theme-switch-wrapper{
+    margin-left: 0px;
+    position: absolute;
+    top: 0;
+    right: 10%;
+  }
+  .tool > .essential-tool{
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* flex-grow: 100px; */
+    box-sizing: border-box;
+    order: 5;
+  }
+  .tool > .essential-tool > .action-tool{
+    min-width: 130px;
+  }
+  .editor > .tool > .essential-tool{
+    margin: 0;
+  }
+  .footer{
+    position: absolute;
+    bottom: -850px;
+  }
 }
