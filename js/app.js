@@ -227,6 +227,14 @@ function rgbAdjust(data,vals){
     }
 }
 
+// Adjust image exposure
+rangeInput = document.getElementById('range');
+
+container = document.getElementsByClassName('img-box')[0];
+
+rangeInput.addEventListener("mousemove",function(){
+container.style.filter = "brightness(" + rangeInput.value + "%)";
+});
 
 //Save Image from Canvas
 saveBtn.addEventListener("click", function(){
