@@ -622,3 +622,7 @@ input:checked + .slider:before {
 .social-icon--github .tooltip::after{
   border-top-color: #4284c0;
 }
+
+#exposure-range {
+  display: none;
+}

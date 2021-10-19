@@ -68,6 +68,11 @@
           <i class="fas fa-icicles"></i>
           <p>Icicles</p>
         </div>
+        <div class="action-tool" onclick="showExposureRange()">
+          <input id="exposure-range" type="range" min="-100" max="100" value="0" onchange="changeExposure(event)">
+          <i id="exposure-icon" class="fas fa-lightbulb"></i>
+          <p>Exposure</p>
+        </div>
         <div class="action-tool" onclick=rotate()>
           <i class="fas fa-rotate"></i>
           <p>Rotate</p>
