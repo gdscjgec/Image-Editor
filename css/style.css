@@ -25,6 +25,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: inherit;
+  background-attachment: fixed;
   text-align: center;
   padding: 2% 5%;
 }
@@ -38,9 +39,9 @@ body.dark-theme{
   background-size: cover;
   --primary-bg-color:#222;
   --primary-text-color:#fff;
-  --secondary-text-color:#fff;
+  background-attachment: fixed;
+  --secondary-text-color:#222;
 }
-
 
 .navigation{
   display: flex;
@@ -76,7 +77,36 @@ body.dark-theme{
   border-radius: 3px;
   filter: drop-shadow(2px 2px 2px rgba(8, 8, 8, 0.219));
   transition: all 0.3s ease-in-out;
+
 }
+
+
+
+.navigation > .download-img > .save-now{
+  position: relative;
+  top: 66rem;
+  right: 152%;
+  padding: 10px;
+}
+
+
+
+a#save-now {
+  position: lef;
+  position: absolute;
+  /* left: 86rem; */
+  right: 28px;
+  top: 75px;
+  padding: 5px;
+  width: 107px;
+  height: 35px;
+  font-size: 17px;
+  box-shadow: 2px 2px 4px 0px #888888;
+}
+
+
+
+
 .upload-btn{
   display: flex;
   justify-content: center;
@@ -98,20 +128,22 @@ body.dark-theme{
   margin-bottom: 40px;
   font-weight: 500;
 }
-.upload-btn > .upload-img > .upload{
+/* .upload-btn > .upload-img > .upload{
   padding: 20px 15px;
-  font-size: 15px;
+  font-size: 19px;
   font-family: sans-serif;
   font-weight: bold;
   text-decoration: none;
-  background: var(--primary-text-color);
+  background-color: var(--primary-text-color);
   color: var(--secondary-text-color);
   letter-spacing: 2px;
   text-align: center;
   position: relative;
   transition: all .20s;
-  border-radius: 67px;
+  border-radius: 20px;
+  padding: 15px;
   box-shadow: 0.1rem 0.4rem 0.8rem rgb(150 73 137);
+  
 }
 .upload-btn > .upload-img > .upload span{
   position: relative;
@@ -120,7 +152,7 @@ body.dark-theme{
 .upload-btn > .upload-img > .upload:after{
   position: absolute;
   content: "";
-  border-radius: 67px;
+  border-radius: 8px;
   top: 0;
   left: 0;
   width: 0;
@@ -129,12 +161,38 @@ body.dark-theme{
   transition: all .20s;
 }
 .upload-btn > .upload-img > .upload:hover{
+  transition: background-color 2s ease-in-out, color 0.4s ease-in-out, border-radius 0.4s ease-in-out;
   color: #fff;
 }
 .upload-btn > .upload-img > .upload:hover:after{
   width: 100%;
-}
+  transition: all .20s;
+  transition: background-color 2s ease-in-out, color 0.4s ease-in-out, border-radius 0.4s ease-in-out;
+} */
 
+
+.upload-btn > .upload-img > .upload{
+  padding: 20px 15px;
+  font-size: 19px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 15px;
+  border-radius: 8px;
+  background-color: var(--button-color);
+  color:var(--secondary-text-color);
+  border: 2px solid var(--button-color);
+} 
+
+.upload-btn > .upload-img > .upload:hover{
+  background-color: rgb(65, 65, 65);
+  cursor: pointer;
+  background: none;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-radius 0.4s ease-in-out;
+  color: var(--button-color);
+  font-weight: 0;
+  border-radius: 10px;
+} 
 .editor{
   height: 80vh;
   text-align: center;
@@ -168,12 +226,14 @@ body.dark-theme{
   text-align: center;
   color: rgb(255, 247, 252);
   border-radius: 10px;
+  
   transform: perspective(900px) rotateY(0deg);
   box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
+  border: none;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas:hover{
   background: black;
-  transform: perspective(900px) rotateY(30deg);
+  transform: perspective(900px) rotateY(45deg);
 
 }
 .editor > .tool > .essential-tool > .action-tool > div{
@@ -186,12 +246,18 @@ body.dark-theme{
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(45deg,rgb(83, 82, 82),pink);
+  background: linear-gradient(45deg,rgb(255, 255, 255),rgba(255, 0, 157, 0.623));
   animation: animate 2s linear infinite;
   transition: box-shadow 2s ease-in;
+  border: none;
 }
 
 /* Adding text on button hovers */
+
+.editor > .tool > .essential-tool > .action-tool > div:hover{
+color: black;
+font-size: 20px;
+}
 .action-tool p{
   margin-top: 20%;
 }
@@ -205,7 +271,7 @@ body.dark-theme{
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled{
   background: black;
-  box-shadow: 0.1rem 0.1rem 0.7rem rgb(235, 25, 172);
+  box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgb(236, 84, 191);
   cursor: not-allowed;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled:hover{
@@ -234,6 +300,14 @@ body.dark-theme{
   color: #dd8a89;
   padding: 10px;
 }
+.uploaded-img-container{
+  height: 200px;
+  width: 200px;
+  transition: transform 0.8s ease-in-out;
+ }
+.uploaded-img-container:hover{
+  transform:rotate(360);
+ }
 .editor > .canvas > .img-box{
   width: 100%;
   height: 100%;
@@ -311,7 +385,7 @@ body.dark-theme{
   color: #4267B2;
 }
 .footer > .useful-links > ul > li > a > .fa-facebook:hover{
-  color:black;
+  color:rgb(48, 44, 44);
 }
 .footer > .useful-links > ul > li > a > .fa-twitter{
   color: #1DA1F2;
@@ -327,10 +401,8 @@ body.dark-theme{
 }
 
 /* ------- responsive ------------ */
-@media(max-width:767px){
+/* @media(max-width:767px){
   .editor{
-    /* display: flex;
-    flex-direction: column; */
     position: relative;
     left: 50%;
     transform: translate(-39%);
@@ -368,16 +440,11 @@ body.dark-theme{
     top: 5%;
     background-size: contain;
   }
-  .navigation > .download-img > .save-now{
-    position: relative;
-    top: 66rem;
-    right: 152%;
-    padding: 10px;
-  }
+
   .footer{
     margin-top: 100px;
   }
-}
+} */
 
 
 .theme-switch-wrapper {
@@ -447,4 +514,179 @@ input:checked + .slider:before {
   -ms-transform: rotate( var(--turn) );
   -o-transform: rotate( var(--turn) );
   transform: rotate( var(--turn) );
+}
+
+
+.social-icons{
+  display: flex;
+}
+.social-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Halvetica Neue",sans-serif,"Arial";
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: inset 1px 1px 2px #90a4ae,
+              inset -1px -1px 2px white,
+              5px 5px 10px #90a4ae,
+              -5px -5px 10px white;
+  border: 6px solid rgba(230,228,228);            
+}
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.tooltip:after {
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+/* color */
+.social-icon--codepen{
+  background: #000;
+  color: #fff;
+}
+.social-icon--github{
+  background: #4284c0;
+  color: #fff;
+}
+.social-icon--twitter{
+  background: #2b97f1;
+  color: #fff;
+}
+.social-icon--youtube{
+  background: #fa3217;
+  color: white;
+}
+.social-icon--instagram{
+  background: #527fa6;
+  color: white;
+}
+.social-icon--facebook{
+  background: #3b5a9b;
+  color: white;
+}
+/* Hover Effect*/
+.social-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -150%);
+}
+.social-icon--codepen .tooltip{
+  background: #000;
+  columns: currentColor;
+}
+.social-icon--codepen .tooltip::after{
+  border-top-color: black;
+}
+
+.social-icon--facebook .tooltip{
+  background: #3b5a9b;
+  columns: currentColor;
+}
+.social-icon--facebook .tooltip::after{
+  border-top-color: #3b5a9a;
+}
+.social-icon--twitter .tooltip{
+  background: #2b97f1;
+  columns: currentColor;
+}
+.social-icon--twitter .tooltip::after{
+  border-top-color: #2b97f1;
+}
+
+.social-icon--youtube .tooltip{
+  background: #f31344;
+  columns: currentColor;
+}
+.social-icon--youtube .tooltip::after{
+  border-top-color: #f31344;
+}
+
+.social-icon--instagram .tooltip{
+  background: #527fa6;
+  columns: currentColor;
+}
+.social-icon--instagram .tooltip:after{
+  border-top-color: #527fa6;
+}
+
+
+
+/* -----------responsive---------- */
+@media screen and (max-width: 1514px){
+  .navigation > .theme-switch-wrapper{
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 900px){
+  .footer{
+    position: absolute;
+    bottom: -500px;
+  }
+}
+@media screen and (max-width: 850px){
+  .editor > .canvas{
+    padding: 20px;
+    width: 100%;
+    margin: 5px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 450px){
+  .navigation > .theme-switch-wrapper{
+    margin-left: 0px;
+    position: absolute;
+    top: 0;
+    right: 10%;
+  }
+  .tool > .essential-tool{
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* flex-grow: 100px; */
+    box-sizing: border-box;
+    order: 5;
+  }
+  .tool > .essential-tool > .action-tool{
+    min-width: 130px;
+  }
+  .editor > .tool > .essential-tool{
+    margin: 0;
+  }
+  .footer{
+    position: absolute;
+    bottom: -850px;
+  }
 }

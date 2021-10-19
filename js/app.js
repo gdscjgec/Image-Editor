@@ -3,8 +3,9 @@ const uploadBtn = document.querySelector("#upload");
 const saveBtn = document.querySelector("#save-now");
 const undoBtn = document.querySelector("#undo-btn");
 const redoBtn = document.querySelector("#redo-btn");
-const canvas = document.querySelector("#img-box");
-const ctx = canvas.getContext("2d");
+var canvas = document.querySelector("#img-box");
+const cropButtonDOM = document.getElementById("crop-button");
+var ctx = canvas.getContext("2d");
 const changeControl = {
     prevImage: null,
     currentImage: null,
@@ -41,6 +42,60 @@ function unDo(){
     }
 }
 
+// Draw a rectangle to crop with mousemove
+const doCrop = (initialCoords, imageData, event) => {
+   ctx.putImageData(imageData, 0, 0);
+   const rect = canvas.getBoundingClientRect();
+   const coords = {
+      x: ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width,
+      y: ((event.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height,
+   };
+   ctx.strokeRect(initialCoords.x, initialCoords.y, coords.x, coords.y);
+};
+
+// Crop and set the new image with mouseup
+const endCrop = (initialCoords, event) => {
+   const rect = canvas.getBoundingClientRect();
+   const coords = {
+      x: ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width,
+      y: ((event.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height,
+   };
+
+   // getting the image in the area of the reactangle
+   const croppedImage = ctx.getImageData(
+      initialCoords.x + 1,
+      initialCoords.y + 1,
+      Math.abs(initialCoords.x - coords.x),
+      Math.abs(initialCoords.y - coords.y)
+   );
+
+   // removing listerners
+   var old_element = canvas;
+   var new_element = old_element.cloneNode(true);
+   old_element.parentNode.replaceChild(new_element, old_element);
+   canvas = new_element;
+   ctx = canvas.getContext("2d");
+
+   // setting up the cropped image
+   ctx.putImageData(croppedImage, 0, 0);
+};
+
+// Crop when mousedown
+const startCrop = (imageData, event) => {
+   const rect = canvas.getBoundingClientRect();
+   const initialCoords = {
+      x: ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width,
+      y: ((event.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height,
+   };
+   canvas.addEventListener("mousemove", (event) => doCrop(initialCoords, imageData, event));
+   canvas.addEventListener("mouseup", (event) => endCrop(initialCoords, event));
+};
+
+// Crop Image
+const cropImage = () => {
+   var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+   canvas.addEventListener("mousedown", (event) => startCrop(imageData, event));
+};
 
 
 // Redo last action
@@ -205,3 +260,5 @@ fileBtn.addEventListener('change', function(){
     });
     reader.readAsDataURL(this.files[0]);
 });
+
+cropButtonDOM.addEventListener("click", cropImage);
