@@ -641,6 +641,9 @@ input:checked + .slider:before {
   border-top-color: #527fa6;
 }
 
+#exposure-range {
+  display: none;
+}
 
 
 /* -----------responsive---------- */
