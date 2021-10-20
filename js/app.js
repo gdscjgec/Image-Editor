@@ -5,6 +5,8 @@ const undoBtn = document.querySelector("#undo-btn");
 const redoBtn = document.querySelector("#redo-btn");
 var canvas = document.querySelector("#img-box");
 const cropButtonDOM = document.getElementById("crop-button");
+var beforeExpImagedata;
+var isExpRangeVisible = false;
 var ctx = canvas.getContext("2d");
 const changeControl = {
     prevImage: null,
@@ -97,6 +99,27 @@ const cropImage = () => {
    canvas.addEventListener("mousedown", (event) => startCrop(imageData, event));
 };
 
+// Show Exposure Range
+const showExposureRange = () => {
+   if (!isExpRangeVisible) {
+      document.getElementById("exposure-icon").style.display = "none";
+      document.getElementById("exposure-range").style.display = "block";
+      beforeExpImagedata = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      isExpRangeVisible = true;
+   }
+};
+
+// Change Exposure
+const changeExposure = (event) => {
+   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+   const val = event.target.value;
+   for (let i = 0; i < imageData.data.length; i += 4) {
+      imageData.data[i] = beforeExpImagedata.data[i] + 255 * (val / 100);
+      imageData.data[i + 1] = beforeExpImagedata.data[i + 1] + 255 * (val / 100);
+      imageData.data[i + 2] = beforeExpImagedata.data[i + 2] + 255 * (val / 100);
+   }
+   ctx.putImageData(imageData, 0, 0);
+};
 
 // Redo last action
 function reDo(){
