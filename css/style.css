@@ -21,7 +21,7 @@ body{
   font-family: 'Noto Sans', sans-serif;
   overflow-x: hidden;
   background:var(--primary-bg-color) ;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), var(--background-light-mode-img);
+  background: linear-gradient(rgba(226, 214, 214, 0.267), rgba(252, 224, 224, 0.836)), var(--background-light-mode-img);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: inherit;
@@ -34,7 +34,7 @@ p{
 }
 
 body.dark-theme{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255,255,255,.5)), var(--background-dark-mode-img);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.219)), var(--background-dark-mode-img);
   background-repeat: no-repeat;
   background-size: cover;
   --primary-bg-color:#222;
@@ -50,10 +50,10 @@ body.dark-theme{
 
 }
 .navigation > .logo > img{
-  width: 100px;
+  width: 50px;
   border-radius: 1px;
-  border-radius: 20px;
-  opacity: 0.9;
+  border-radius: 15px;
+  opacity: 0.8;
 }
 .navigation > .download-img{
   margin-right: 20px;
@@ -84,7 +84,7 @@ body.dark-theme{
 
 .navigation > .download-img > .save-now{
   position: relative;
-  top: 66rem;
+  top: 60rem;
   right: 152%;
   padding: 10px;
 }
@@ -101,11 +101,8 @@ a#save-now {
   width: 107px;
   height: 35px;
   font-size: 17px;
-  box-shadow: 2px 2px 4px 0px #888888;
+  box-shadow: 2px 2px 4px 0px #5e5858;
 }
-
-
-
 
 .upload-btn{
   display: flex;
@@ -185,7 +182,7 @@ a#save-now {
 } 
 
 .upload-btn > .upload-img > .upload:hover{
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(202, 91, 91);
   cursor: pointer;
   background: none;
   transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-radius 0.4s ease-in-out;
@@ -221,7 +218,7 @@ a#save-now {
   height: 30px;
   background-color: #CD443F; */
   cursor: pointer;
-  background: linear-gradient(45deg,rgb(255, 0, 157),rgb(240, 133, 186));
+  background: linear-gradient(45deg,rgb(60, 77, 92),rgb(13, 19, 53));
   padding: 12px;
   text-align: center;
   color: rgb(255, 247, 252);
@@ -232,21 +229,21 @@ a#save-now {
   border: none;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas:hover{
-  background: black;
+  background: rgb(158, 75, 75);
   transform: perspective(900px) rotateY(45deg);
 
 }
 .editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
-  background-color: #CD443F;
+  background-color: rgb(158, 75, 75);
   padding: 5px;
-  border:1px solid rgba(112, 6, 86, 0.932);
+  border:1px solid rgb(85, 83, 83);
  border-radius: 15px;
-   color: rgb(85, 8, 72);
+   color: rgb(8, 8, 8);
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(45deg,rgb(255, 255, 255),rgba(255, 0, 157, 0.623));
+  background: linear-gradient(45deg,rgb(60, 77, 92),rgb(13, 19, 53));
   animation: animate 2s linear infinite;
   transition: box-shadow 2s ease-in;
   border: none;
@@ -255,11 +252,11 @@ a#save-now {
 /* Adding text on button hovers */
 
 .editor > .tool > .essential-tool > .action-tool > div:hover{
-color: black;
+color: rgb(158, 75, 75);
 font-size: 20px;
 }
 .action-tool p{
-  margin-top: 20%;
+  margin-top: 10%;
 }
 @keyframes animate {
   50%{
@@ -270,12 +267,12 @@ font-size: 20px;
   }
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled{
-  background: black;
-  box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgb(236, 84, 191);
+  background: rgb(49, 53, 73);
+  box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgb(95, 85, 92);
   cursor: not-allowed;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled:hover{
-  background: rgba(235, 11, 116, 0.781);
+  background: rgb(158, 75, 75);
 }
 .editor > .canvas{
   padding: 20px;
@@ -286,7 +283,7 @@ font-size: 20px;
 }
 .editor > .canvas > .uploaded-img-container{
   text-align: center;
-  border: 1px dashed #cd443f6b;
+  border: 1px dashed #6159746b;
   width: 100%;
   
   display: flex;
@@ -297,7 +294,7 @@ font-size: 20px;
 }
 .editor > .canvas > .uploaded-img-container > .fa-cloud-upload-alt{
   font-size: 100px;
-  color: #dd8a89;
+  color: rgb(158, 75, 75);
   padding: 10px;
 }
 .uploaded-img-container{
@@ -325,7 +322,7 @@ font-size: 20px;
   padding: 1rem;
   border-radius: 8px;
   display: flex;
-  background: linear-gradient(45deg,rgb(255, 0, 157),rgb(240, 133, 186));
+  background: linear-gradient(45deg,rgb(58, 84, 119),rgb(138, 68, 68));
   color: #fff;
   flex-direction: column;
   row-gap: 0.5rem;
@@ -352,7 +349,8 @@ font-size: 20px;
 }
 
 .footer{
-  display: flex;
+  display: inline-block;
+  text-align: center;
   justify-content: space-between;
 }
 .footer > .logo > p{
@@ -519,14 +517,17 @@ input:checked + .slider:before {
 
 .social-icons{
   display: flex;
+  align-items: center;
+  text-align: center;
 }
 .social-icon{
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 80px;
-  height: 80px;
+  text-align: center;
+  position:relative;
+  width: 50px;
+  height: 50px;
   margin: 0 0.5rem;
   border-radius: 50%;
   cursor: pointer;
@@ -558,8 +559,8 @@ input:checked + .slider:before {
   z-index: 1;
 }
 .tooltip:after {
-  display: block;
-  position: absolute;
+  display:inline-block;
+  /* position: absolute; */
   bottom: 1px;
   left: 50%;
   width: 0;
