@@ -35,6 +35,10 @@ function rotate()
 // Undo last action
 function unDo(){
     if(changeControl.prevImage){
+        if(document.getElementById("img-box").style.display=='none'){
+            document.getElementById("img-box").style.display='block';
+            document.querySelector("div.uploaded-img-container").style.display = "none";
+        }
         undoBtn.classList.add("disabled");
         redoBtn.classList.remove("disabled");
         ctx.putImageData(changeControl.prevImage, 0, 0);
@@ -160,6 +164,8 @@ function applyFilter(filter){
         case "amaro":
             doAmaro();
             break;
+        case "remove":
+            remove();
     }
     changeControl.currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
