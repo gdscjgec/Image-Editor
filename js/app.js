@@ -270,6 +270,7 @@ saveBtn.addEventListener("click", function(){
 
 //Rendering user Generated Image onto Canvas
 fileBtn.addEventListener('change', function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     const reader = new FileReader();
     reader.addEventListener('load',() => {
         uploaded_img = reader.result;
