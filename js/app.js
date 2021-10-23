@@ -35,6 +35,10 @@ function rotate()
 // Undo last action
 function unDo(){
     if(changeControl.prevImage){
+        if(document.getElementById("img-box").style.display=='none'){
+            document.getElementById("img-box").style.display='block';
+            document.querySelector("div.uploaded-img-container").style.display = "none";
+        }
         undoBtn.classList.add("disabled");
         redoBtn.classList.remove("disabled");
         ctx.putImageData(changeControl.prevImage, 0, 0);
@@ -136,7 +140,9 @@ function reDo(){
 // Remove image btn click
 function remove()
 {
-var element = document.getElementById("img-box").style.display='none';
+document.getElementById("img-box").style.display='none';
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+document.querySelector("div.uploaded-img-container").style.display = "block";
 }
 
 //Function to call specific filters and do change control, add new cases for new filters
@@ -158,6 +164,8 @@ function applyFilter(filter){
         case "amaro":
             doAmaro();
             break;
+        case "remove":
+            remove();
     }
     changeControl.currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
@@ -268,6 +276,7 @@ saveBtn.addEventListener("click", function(){
 
 //Rendering user Generated Image onto Canvas
 fileBtn.addEventListener('change', function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     const reader = new FileReader();
     reader.addEventListener('load',() => {
         uploaded_img = reader.result;
