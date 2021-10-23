@@ -136,7 +136,9 @@ function reDo(){
 // Remove image btn click
 function remove()
 {
-var element = document.getElementById("img-box").style.display='none';
+document.getElementById("img-box").style.display='none';
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+document.querySelector("div.uploaded-img-container").style.display = "block";
 }
 
 //Function to call specific filters and do change control, add new cases for new filters
