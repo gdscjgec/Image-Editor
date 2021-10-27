@@ -1,10 +1,16 @@
-
 <div align="center">
   <img align="center" src="assets/logo/logo_gif.gif" alt="Logo" height="90">
   <h2 align="center">Quick Image Editor</h2>
    <p align="center">
     A simple web based Image editor for all your editing needs.
   </p>
+  <p>
+      <a href="https://gdscjgec.github.io/Image-Editor/">View Demo</a>
+      |
+      <a href="#">Report Bug</a>
+      |
+      <a href="#">Request Feature</a>
+    </p>
 </div>
 <br />
 <p align="center">Participating in</p>
@@ -13,21 +19,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <p align="center">by</p>
+  <p align="center"> And Organised by</p>
   <a href="https://github.com/gdscjgec">
     <img src="assets/images/GDSC.png" alt="Logo" height="80">
   </a>
   <br />
-    <a href="#"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <p>
-      <a href="https://gdscjgec.github.io/Image-Editor/">View Demo</a>
-      |
-      <a href="#">Report Bug</a>
-      |
-      <a href="#">Request Feature</a>
-    </p>
+  <a href="#"><strong>Explore the docs 🗺️</strong></a>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -56,41 +53,51 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+<br />
 
-## About The Project
+## About The Project 📍
 
-![click](https://raw.githubusercontent.com/ZiaCodes/img_server/main/others/Screenshot%202021-09-30%20023614.jpg)
+<img align="center" src="assets/features.gif" alt="Logo" width="100%">
 
-A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping , contras and exposure etc.
+\
+A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping, contrast and exposure. 
+It's easy to enhance and beautify your photos and share them on Facebook and other social media. Effects and filters bring your photos to life with easy yet impressive post-processing that takes only a few clicks.
 
-### Built With
+<br />
+
+## Built With ⛏️
 
 - [HTML](https://html.spec.whatwg.org/multipage/)
 - [CSS](hhttps://www.w3.org/Style/CSS/Overview.en.html)
 - [JavaScript](https://www.javascript.com/)
 
+And so much love ❤️
 <!-- GETTING STARTED -->
 
-## Getting Started
+<br />
+
+## Getting Started ⚡️
 
 To get started just fork the repository and make a clone .
 
 ### Prerequisites
 
-You should know the basics of HTML5,CSS3 and Javascript.
+You should know the basics of HTML5, CSS3 and Javascript.
 
 - From git CLI
   ```sh
   git clone https://github.com/gdscjgec/Image-Editor.git
   ```
 
-### Installation
+### Installation ⚙️
 
-1. You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
+You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
 
 <!-- USAGE EXAMPLES -->
 
-## File Structure
+<br />
+
+## File Structure 🧬
 
 ```
   ├── assets/
@@ -104,12 +111,13 @@ You should know the basics of HTML5,CSS3 and Javascript.
   ├── index.html          Main page of the website
 ```
 
----
+
 
 
 <!-- CONTRIBUTING -->
+<br />
 
-## Contributing
+## Contributing 👍
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -121,13 +129,14 @@ Contributions are what make the open source community such an amazing place to l
 6. Open a Pull Request
 
 <!-- LICENSE -->
+<br />
 
-## License
+## License ⚠️
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 
-## Contact
+## Contact 📧
 
 Mail us at - gdsc@jgec.ac.in
