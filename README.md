@@ -1,27 +1,34 @@
+
+<div align="center">
+  <img align="center" src="assets/logo/logo_gif.gif" alt="Logo" height="90">
+  <h2 align="center">Quick Image Editor</h2>
+   <p align="center">
+    A simple web based Image editor for all your editing needs.
+  </p>
+</div>
+<br />
+<p align="center">Participating in</p>
 <div align="center"><a href="https://hacktoberfest.digitalocean.com/"><img src="https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg" alt="Banner" width="60%"/></a></div>
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<div align="center">
+  <p align="center">by</p>
   <a href="https://github.com/gdscjgec">
-    <img src="https://edit-photo-demo.netlify.app/assets/logo/logo_gif.gif" alt="Logo" width="100" height="80">
+    <img src="assets/images/GDSC.png" alt="Logo" height="80">
   </a>
-
-  <h3 align="center">Quick Photo Editor</h3>
-
-  <p align="center">
-    A web based photo Editor with essential tool such as cropping , exposure etc.
-    <br />
+  <br />
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://gdscjgec.github.io/Image-Editor/">View Demo</a>
-    ·
-    <a href="#">Report Bug</a>
-    ·
-    <a href="#">Request Feature</a>
-  </p>
-</p>
+    <p>
+      <a href="https://gdscjgec.github.io/Image-Editor/">View Demo</a>
+      |
+      <a href="#">Report Bug</a>
+      |
+      <a href="#">Request Feature</a>
+    </p>
+</div>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
