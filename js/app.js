@@ -36,10 +36,15 @@ const gRoot = getComputedStyle(Root)
 
 var RotateDeg = parseInt(gRoot.getPropertyValue('--turn'))
 
-function rotate()
-{
-  RotateDeg = (RotateDeg+90) % 360
-  Root.style.setProperty('--turn', RotateDeg + "deg")
+function rotate() {
+    ctx.save();
+  // prep canvas for rotation
+    ctx.translate(canvas.width, 0);                   // translate to canvas center
+    ctx.rotate(Math.PI*0.5);                 // add rotation transform
+    ctx.globalCompositeOperation = "copy";   // set comp. mode to "copy"
+    ctx.drawImage(ctx.canvas,  0, 0, canvas.height, canvas.width); // draw image
+    ctx.restore();
+    //Root.style.setProperty('--turn', RotateDeg + "deg")
 }
 
 // Undo last action
