@@ -4,6 +4,7 @@ const saveBtn = document.querySelector("#save-now");
 const undoBtn = document.querySelector("#undo-btn");
 const redoBtn = document.querySelector("#redo-btn");
 var canvas = document.querySelector("#img-box");
+var isDark = false;
 const cropButtonDOM = document.getElementById("crop-button");
 var beforeExpImagedata;
 var isExpRangeVisible = false;
@@ -17,6 +18,15 @@ const changeControl = {
 const themeSwitch = document.querySelector('input');
 
 themeSwitch.addEventListener('change', () => {
+	if (!isDark) {
+		document.getElementById("dark").style.display = "none"
+		document.getElementById("light").style.display = "block"
+	}
+	else {
+		document.getElementById("dark").style.display = "block"
+		document.getElementById("light").style.display = "none"
+	}
+	isDark = !isDark;
   document.body.classList.toggle('dark-theme');
 });
 

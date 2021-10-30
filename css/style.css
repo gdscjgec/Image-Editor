@@ -98,7 +98,7 @@ a#save-now {
   right: 28px;
   top: 75px;
   padding: 5px;
-  width: 107px;
+  width: 125px;
   height: 35px;
   font-size: 17px;
   box-shadow: 2px 2px 4px 0px #888888;
@@ -233,8 +233,7 @@ a#save-now {
 }
 .editor > .tool > .essential-tool > .action-tool > .fas:hover{
   background: black;
-  transform: perspective(900px) rotateY(45deg);
-
+  transform:scale(1.1);
 }
 .editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
@@ -400,6 +399,9 @@ font-size: 20px;
   color: black;
 }
 
+#delete {
+  background: #D0454C;
+}
 /* ------- responsive ------------ */
 /* @media(max-width:767px){
   .editor{
@@ -445,6 +447,9 @@ font-size: 20px;
     margin-top: 100px;
   }
 } */
+.fa-upload {
+  margin-right: 10px;
+}
 
 
 .theme-switch-wrapper {
@@ -452,13 +457,13 @@ font-size: 20px;
   margin-left: 1070px;
   margin-top: 25px;
   height: 2rem;
-  width: 3.7rem;
+  width: 7rem;
   background:var(--button-color);
   color:#fff;
   cursor: pointer;
   border-radius: 5rem;
 }
- 
+
 .theme-switch {
   display: inline-block;
   height: 34px;
@@ -535,9 +540,9 @@ input:checked + .slider:before {
   text-decoration: none;
   transition: all 0.15s ease;
   box-shadow: inset 1px 1px 2px #90a4ae,
-              inset -1px -1px 2px white,
-              5px 5px 10px #90a4ae,
-              -5px -5px 10px white;
+  inset -1px -1px 2px white,
+  5px 5px 10px #90a4ae,
+  -5px -5px 10px white;
   border: 6px solid rgba(230,228,228);            
 }
 /* Tooltips */
@@ -645,6 +650,39 @@ input:checked + .slider:before {
   display: none;
 }
 
+.theme-switch-wrapper {
+  background: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.fa-cloud-moon::before {
+  height: 100%;
+  color: #000;
+}
+
+#dark {
+  display: block;
+}
+
+#light {
+  display: none;
+}
+
+#grey-scale {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(99,103,103,1) 100%);
+}
+
+#sepia {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #96563D 100%);
+}
+#amaro {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #DCD6CA 100%);
+}
+#lark {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #B49E73 100%);
+}
 
 /* -----------responsive---------- */
 @media screen and (max-width: 1514px){
