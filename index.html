@@ -17,11 +17,11 @@
 <body>
   <section class="navigation">
     <div class="logo">
-      <img src="https://pluspng.com/img-png/editor-png-image-editing-512.png" alt="logo">
+      <img src="./assets/logo/logo_gif.gif" alt="logo">
     </div>
     <div class="theme-switch-wrapper">
-      <i class="fas fa-cloud-moon" id="dark"></i>
-      <i class="fas fa-cloud-sun" id="light"></i>
+      <i class="fus fa-cloud-moon" id="dark"></i>
+      <i class="fus fa-cloud-sun" id="light"></i>
       <label class="theme-switch" for="checkbox">
         <input type="checkbox" id="checkbox" />
         <div class="slider round">
@@ -37,7 +37,7 @@
 
   <section class="upload-btn">
     <div class="upload-img">
-      <p id = "upload-tag">Smart Photo Editor Tool for Smart Editing</p>
+      <p id = "upload-tag">Quick Photo Editor Tool for Quick Editing</p>
       <input type="file" id="input-field" accept="image/png, image/jpeg" hidden>
       <a href="#" id="upload" class="upload" onclick="uploadbtnActive()"><i class="fas fa-upload"></i><span>Upload an image</span></a>
     </div>
@@ -58,29 +58,24 @@
       <!-- Essential tool Start here -->
       <div class="essential-tool" id="essentail-tool">
         <div id="crop-button" class="action-tool">
-          <i class="fas fa-crop"></i>
-          <p>Crop</p>
+          <span class="fus fa-crop">Crop</span>
         </div>
         <div class="action-tool">
-          <i class="fas fa-lightbulb"></i>
-          <p>LightBulb</p>
+          <span class="fus fa-lightbulb">Lightbulb</span>
         </div>
         <div class="action-tool">
-          <i class="fas fa-eye-dropper"></i>
-          <p>Eyedropper</p>
+          <span class="fus fa-eye-dropper">Eyedropper</span>
+          
         </div>
         <div class="action-tool">
-          <i class="fas fa-icicles"></i>
-          <p>Icicles</p>
+          <span class="fus fa-icicles">Icicles</span>
         </div>
         <div class="action-tool" onclick="showExposureRange()">
           <input id="exposure-range" type="range" min="-100" max="100" value="0" onchange="changeExposure(event)">
-          <i id="exposure-icon" class="fas fa-lightbulb"></i>
-          <p>Exposure</p>
+          <span id="exposure-icon" class="fus fa-lightbulb">Exposure</i>
         </div>
         <div class="action-tool" onclick=rotate()>
-          <i class="fas fa-rotate"></i>
-          <p>Rotate</p>
+          <span class="fus fa-rotate">Rotate</span>
         </div>
       </div>
       <!-- Essential tool end here -->
@@ -88,16 +83,13 @@
       <!-- handy tool Start here -->
       <div class="essential-tool" id="handy-tool">
         <div class="action-tool" onclick=unDo()>
-          <i id="undo-btn" class="fas fa-undo disabled"></i>
-          <p>Undo</p>
+          <span id="undo-btn" class="fus fa-undo disabled">Undo</span>
         </div>
         <div class="action-tool" onclick=reDo()>
-          <i id="redo-btn" class="fas fa-redo disabled"></i>
-          <p>Redo</p>
+          <span id="redo-btn" class="fus fa-redo disabled">Redo</span>
         </div>
         <div class="action-tool" onclick="applyFilter('remove')">
-          <i id="delete" id="close-btn" class="fas fa-close"></i>
-          <p>Delete</p>
+          <span id="delete" id="close-btn" class="fus fa-close">Delete</span>
         </div>
       </div>
       

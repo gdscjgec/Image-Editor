@@ -12,8 +12,8 @@
   --secondary-text-color:white;
   --button-color: #CD443F;
   --primary-bg-color:rgb(241, 241, 241);
-  --background-light-mode-img: url("https://d5nunyagcicgy.cloudfront.net/p/assets/images/clipping-path-point-editing_V2_1c851c654658cd5efbf101a7fd056bcc.jpg");
-  --background-dark-mode-img: url("../assets/images/dark-mode-bg.jpg");
+  --background-light-mode-img: url("https://imgv3.fotor.com/images/background/background-image.png");
+  --background-dark-mode-img: url("https://th.bing.com/th/id/OIP.MgPrZy9gH8bQmiTkU0cqaQHaDB?pid=ImgDet&rs=1");
   --turn : 0deg;
 }
 
@@ -72,7 +72,7 @@ body.dark-theme{
   
   padding: 8px;
   text-decoration: none;
-  background-color: rgb(48,176,4);
+  background: linear-gradient(45deg,rgb(74, 74, 212),rgb(154, 154, 237));
   color:var(--secondary-text-color);
   border-radius: 3px;
   filter: drop-shadow(2px 2px 2px rgba(8, 8, 8, 0.219));
@@ -127,6 +127,7 @@ a#save-now {
   padding: 5px;
   margin-bottom: 40px;
   font-weight: 500;
+  margin-left: 150px;
 }
 /* .upload-btn > .upload-img > .upload{
   padding: 20px 15px;
@@ -179,9 +180,10 @@ a#save-now {
   text-decoration: none;
   margin-right: 15px;
   border-radius: 8px;
-  background-color: rgb(48,176,4);
+  background:linear-gradient(45deg,rgb(74, 74, 212),rgb(154, 154, 237));
   color:var(--secondary-text-color);
   border: 2px solid var(--button-color);
+  margin-left: 163px;
 } 
 
 .upload-btn > .upload-img > .upload:hover{
@@ -217,13 +219,13 @@ a#save-now {
   display:inline-block;
   padding: 20px;
 }
-.editor > .tool > .essential-tool > .action-tool > .fas{
+.editor > .tool > .essential-tool > .action-tool > .fus{
   /* width: 100px;
   height: 30px;
   background-color: #CD443F; */
   display:inline-block;
   cursor: pointer;
-  background: linear-gradient(45deg,rgb(68, 145, 38),rgb(81, 255, 13));
+  background: linear-gradient(45deg,rgb(74, 74, 212),rgb(154, 154, 237));
   padding: 12px;
   text-align: center;
   color: rgb(255, 247, 252);
@@ -233,7 +235,7 @@ a#save-now {
   box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
   border: none;
 }
-.editor > .tool > .essential-tool > .action-tool > .fas:hover{
+.editor > .tool > .essential-tool > .action-tool > .fus:hover{
   background: black;
   transform:scale(1.1);
 }
@@ -270,12 +272,12 @@ font-size: 20px;
    
   }
 }
-.editor > .tool > .essential-tool > .action-tool > .fas.disabled{
+.editor > .tool > .essential-tool > .action-tool > .fus.disabled{
   background: rgb(20,23,168);
   box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgb(236, 84, 191);
   cursor: not-allowed;
 }
-.editor > .tool > .essential-tool > .action-tool > .fas.disabled:hover{
+.editor > .tool > .essential-tool > .action-tool > .fus.disabled:hover{
   background: rgba(235, 11, 116, 0.781);
 }
 .editor > .canvas{
@@ -289,12 +291,13 @@ font-size: 20px;
   text-align: center;
   border: 1px dashed #cd443f6b;
   width: 100%;
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  width:661px;
+  margin-left:87px;
 }
 .editor > .canvas > .uploaded-img-container > .fa-cloud-upload-alt{
   font-size: 100px;
@@ -404,7 +407,7 @@ font-size: 20px;
 }
 
 #delete {
-  background: rgb(63,122,15);
+  background: rgb(20,23,168);
 }
 /* ------- responsive ------------ */
 /* @media(max-width:767px){
@@ -480,7 +483,7 @@ font-size: 20px;
 }
 
 .slider {
-  background-color: rgb(48,176,4);
+  background:linear-gradient(45deg,rgb(74, 74, 212),rgb(154, 154, 237));
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -502,7 +505,7 @@ font-size: 20px;
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background: linear-gradient(45deg,rgb(74, 74, 212),rgb(154, 154, 237));;
 }
 
 input:checked + .slider:before {
