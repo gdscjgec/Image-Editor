@@ -14,7 +14,7 @@ const changeControl = {
     currentImage: null,
     nextImage: null,
 };
-
+var flag=true;
 const themeSwitch = document.querySelector('input');
 
 themeSwitch.addEventListener('change', () => {
@@ -155,9 +155,12 @@ function reDo(){
 // Remove image btn click
 function remove()
 {
+    flag=true;
 document.getElementById("img-box").style.display='none';
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 document.querySelector("div.uploaded-img-container").style.display = "block";
+flag=true;
+
 }
 
 //Function to call specific filters and do change control, add new cases for new filters
@@ -181,6 +184,7 @@ function applyFilter(filter){
             break;
         case "remove":
             remove();
+            
     }
     changeControl.currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
@@ -190,7 +194,9 @@ var uploaded_img = "";
 
 //Action button for file upload
 function uploadbtnActive(){
+    flag=true;
     fileBtn.click();
+   
 }
 
 //Simple algorithm to convert image to GreyScale
@@ -284,9 +290,15 @@ container.style.filter = "brightness(" + rangeInput.value + "%)";
 
 //Save Image from Canvas
 saveBtn.addEventListener("click", function(){
+    if(flag) {alert("Please upload image");}
+  else  {
+        flag=true;
     const downloadImg = canvas.toDataURL("image/png");
     saveBtn.href = downloadImg;
     saveBtn.download = "image.png";
+    flag=true;
+    }
+   
 });
 
 //Rendering user Generated Image onto Canvas
@@ -297,12 +309,14 @@ fileBtn.addEventListener('change', function(){
         uploaded_img = reader.result;
         const image = new Image();
         image.src = uploaded_img;
+      
         image.onload = () => {
             document.querySelector("div.uploaded-img-container").style.display = "none";
             canvas.style.display = "block";
             ctx.clearRect(0,0,canvas.width,canvas.height);
             ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
             changeControl.currentImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            flag=false;
         };
     });
     reader.readAsDataURL(this.files[0]);
