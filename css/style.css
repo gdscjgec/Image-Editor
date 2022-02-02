@@ -90,7 +90,6 @@ body.dark-theme{
 }
 
 
-
 a#save-now {
   position: lef;
   position: absolute;
@@ -101,7 +100,7 @@ a#save-now {
   width: 125px;
   height: 35px;
   font-size: 17px;
-  box-shadow: 2px 2px 4px 0px #888888;
+  box-shadow: 2px 2px 4px 0px #686464;
 }
 
 
@@ -236,9 +235,44 @@ a#save-now {
   border: none;
 }
 .editor > .tool > .essential-tool > .action-tool > .fus:hover{
-  background: black;
-  transform:scale(1.1);
+  /*background: black;
+  transform:scale(1.1);*/
+  color: #313133;
+  transform: translateY(-6px);
 }
+
+.editor > .tool > .essential-tool > .action-tool > .fus:focus::before {
+  opacity: 1;
+}
+
+.editor > .tool > .essential-tool > .action-tool > .fus:hover::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #0099ff;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+
+
 .editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
   background-color: #CD443F;
@@ -747,3 +781,4 @@ input:checked + .slider:before {
   }
   
 }
+
