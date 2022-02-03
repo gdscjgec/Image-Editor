@@ -15,6 +15,16 @@
 </head>
 
 <body>
+
+  
+    <nav id="header">
+      <h1>Quick Photo Editor</h1>
+      <h2>tool for quick editing</h2>
+    </nav>
+    <section class="navigation">
+      <div class="logo">
+        <img src="./assets/logo/logo_gif.gif" alt="logo">
+
   <section class="navigation">
     <div class="logo">
       <img src="./assets/logo/logo_gif.gif" alt="logo">
@@ -51,108 +61,143 @@
         <i class="fas fa-cloud-upload-alt"></i>
         <p>Please, Upload Your Image!</p>
         
-      </div>
-    </div>
-    <div class="tool">
 
-      <!-- Essential tool Start here -->
-      <div class="essential-tool" id="essentail-tool">
-        <div id="crop-button" class="action-tool">
-          <span class="fus fa-crop">Crop</span>
-        </div>
-        <div class="action-tool">
-          <span class="fus fa-lightbulb">Lightbulb</span>
-        </div>
-        <div class="action-tool">
-          <span class="fus fa-eye-dropper">Eyedropper</span>
+      </div>
+      <div class="theme-switch-wrapper">
+        <i class="fus fa-cloud-moon" id="dark"></i>
+        <i class="fus fa-cloud-sun" id="light"></i>
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round">
+          </div>
+        </label>
+      </div>
+      <div class="download-img">
+        <a href="#" class="save-now" id="save-now">
+          <i class="far fa-save"></i>
+          Save Image</a>
+      </div>
+    </section>
+  
+    <section class="upload-btn">
+      <div class="upload-img">
+       <p id = "upload-tag"><a href="#tools">Lets Start Editing!</a></p>
+        <input type="file" id="input-field" accept="image/png, image/jpeg" hidden>
+        <a href="#" id="upload" class="upload" onclick="uploadbtnActive()"><i class="fas fa-upload"></i><span>Upload an image</span></a>
+      </div>
+    </section>
+  
+    <section class="editor">
+      <div class="canvas">
+        <canvas class="img-box" id="img-box">
+        </canvas>
+        <div class="uploaded-img-container">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p style="font-size: 20px; color: white;">Please, Upload Your Image!</p>
           
         </div>
-        <div class="action-tool">
-          <span class="fus fa-icicles">Icicles</span>
-        </div>
-        <div class="action-tool" onclick="showExposureRange()">
-          <input id="exposure-range" type="range" min="-100" max="100" value="0" onchange="changeExposure(event)">
-          <span id="exposure-icon" class="fus fa-lightbulb">Exposure</i>
-        </div>
-        <div class="action-tool" onclick=rotate()>
-          <span class="fus fa-rotate">Rotate</span>
-        </div>
       </div>
-      <!-- Essential tool end here -->
-
-      <!-- handy tool Start here -->
-      <div class="essential-tool" id="handy-tool">
-        <div class="action-tool" onclick=unDo()>
-          <span id="undo-btn" class="fus fa-undo disabled">Undo</span>
+      <div class="tool" id="tools">
+  
+        <!-- Essential tool Start here -->
+        
+        <div class="essential-tool" id="essentail-tool">
+          <div id="crop-button" class="action-tool">
+            <span class="fus fa-crop">Crop</span>
+          </div>
+          <div class="action-tool">
+            <span class="fus fa-lightbulb">Lightbulb</span>
+          </div>
+          <div class="action-tool">
+            <span class="fus fa-eye-dropper">Eyedropper</span>
+            
+          </div>
+          <div class="action-tool">
+            <span class="fus fa-icicles">Icicles</span>
+          </div>
+          <div class="action-tool" onclick="showExposureRange()">
+            <input id="exposure-range" type="range" min="-100" max="100" value="0" onchange="changeExposure(event)">
+            <span id="exposure-icon" class="fus fa-lightbulb">Exposure</i>
+          </div>
+          <div class="action-tool" onclick=rotate()>
+            <span class="fus fa-rotate">Rotate</span>
+          </div>
         </div>
-        <div class="action-tool" onclick=reDo()>
-          <span id="redo-btn" class="fus fa-redo disabled">Redo</span>
+    
+        <!-- Essential tool end here -->
+  
+        <!-- handy tool Start here -->
+        <div class="essential-tool" id="handy-tool">
+          <div class="action-tool" onclick=unDo()>
+            <span id="undo-btn" class="fus fa-undo disabled">Undo</span>
+          </div>
+          <div class="action-tool" onclick=reDo()>
+            <span id="redo-btn" class="fus fa-redo disabled">Redo</span>
+          </div>
+          <div class="action-tool" onclick="applyFilter('remove')">
+            <span id="delete" id="close-btn" class="fus fa-close">Delete</span>
+          </div>
         </div>
-        <div class="action-tool" onclick="applyFilter('remove')">
-          <span id="delete" id="close-btn" class="fus fa-close">Delete</span>
+        
+        <!-- handy tool end here -->
+  
+        <!-- Filter tool start here -->
+  
+        <div class="essential-tool" id="essential-tool">
+          <div class="action-tool">
+            <div id="grey-scale" onclick="applyFilter('grey')">GreyScale</div>
+          </div>
+          <div class="action-tool">
+            <div id="sepia" onclick="applyFilter('sepia')">Sepia</div>
+          </div>
+          <div class="action-tool">
+            <div id="amaro" onclick="applyFilter('amaro')">Amaro</div>
+          </div>
+          <div class="action-tool">
+            <div id="lark" onclick="applyFilter('lark')">Lark</div>
+          </div>
         </div>
+        <div class="exposure-box">
+          <label>Exposure</label>
+          <input type="range" id="range" min="0" max="200">
+       </div>
+        <!-- Filter tool End here -->
+  
       </div>
-      
-      <!-- handy tool end here -->
-
-      <!-- Filter tool start here -->
-
-      <div class="essential-tool" id="essential-tool">
-        <div class="action-tool">
-          <div id="grey-scale" onclick="applyFilter('grey')">GreyScale</div>
-        </div>
-        <div class="action-tool">
-          <div id="sepia" onclick="applyFilter('sepia')">Sepia</div>
-        </div>
-        <div class="action-tool">
-          <div id="amaro" onclick="applyFilter('amaro')">Amaro</div>
-        </div>
-        <div class="action-tool">
-          <div id="lark" onclick="applyFilter('lark')">Lark</div>
-        </div>
-      </div>
-      <div class="exposure-box">
-        <label>Exposure</label>
-        <input type="range" id="range" min="0" max="200">
-     </div>
-      <!-- Filter tool End here -->
-
+  
+    </section>
+  
+    <section class="footer">
+      <!--
+      <div class="social-icons">
+        
+        <a href="" class="social-icon social-icon--github">
+            <i class="fab fa-github"></i> 
+            <div class="tooltip">Like:250</div>
+          </a>
+          
+          <a href="" class="social-icon social-icon--twitter">
+            <i class="fab fa-twitter"></i>
+            <div class="tooltip">Followers:13K</div>
+          </a>
+         
+          <a href="" class="social-icon social-icon--youtube">
+            <i class="fab fa-youtube"></i> 
+            <div class="tooltip">Subscriber:22K</div>
+          </a>
+          
+          <a href="" class="social-icon social-icon--instagram">
+            <i class="fab fa-instagram"></i> 
+            <div class="tooltip">Followers:1.2K</div>
+          </a>
+          
+          <a href="" class="social-icon social-icon--facebook">
+            <i class="fab fa-facebook"></i> 
+            <div class="tooltip">Friends:7K</div>
+          </a>
     </div>
-
-  </section>
-
-  <section class="footer">
-    <!--
-    <div class="social-icons">
-      
-      <a href="" class="social-icon social-icon--github">
-          <i class="fab fa-github"></i> 
-          <div class="tooltip">Like:250</div>
-        </a>
-        
-        <a href="" class="social-icon social-icon--twitter">
-          <i class="fab fa-twitter"></i>
-          <div class="tooltip">Followers:13K</div>
-        </a>
-       
-        <a href="" class="social-icon social-icon--youtube">
-          <i class="fab fa-youtube"></i> 
-          <div class="tooltip">Subscriber:22K</div>
-        </a>
-        
-        <a href="" class="social-icon social-icon--instagram">
-          <i class="fab fa-instagram"></i> 
-          <div class="tooltip">Followers:1.2K</div>
-        </a>
-        
-        <a href="" class="social-icon social-icon--facebook">
-          <i class="fab fa-facebook"></i> 
-          <div class="tooltip">Friends:7K</div>
-        </a>
-  </div>
--->
-  </section>
-  <script src="./js/app.js"></script>
-</body>
-
-</html>
+  -->
+    </section>
+    <script src="./js/app.js"></script>
+  </body>
+  </html>
