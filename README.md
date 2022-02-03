@@ -100,8 +100,7 @@ You should know the basics of HTML5, CSS3 and Javascript.
 ### Installation ⚙️
 
 1. You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
-2. The web application will be served at http://localhost:5500/
-3. Go to http://localhost:5500/ in your browser and edit your photo. 
+
 
 ### Usage
  1. There is a crop feature in this web application which will help you to crop and resize your photo.
