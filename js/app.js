@@ -323,3 +323,4 @@ fileBtn.addEventListener('change', function(){
 });
 
 cropButtonDOM.addEventListener("click", cropImage);
+
