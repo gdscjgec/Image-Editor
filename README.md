@@ -62,8 +62,14 @@
 <img align="center" src="assets/features.gif" alt="Logo" width="100%">
 
 \
-A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping, contrast and exposure. 
-It's easy to enhance and beautify your photos and share them on Facebook and other social media. Effects and filters bring your photos to life with easy yet impressive post-processing that takes only a few clicks.
+<!-- A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping, contrast and exposure. 
+It's easy to enhance and beautify your photos and share them on Facebook and other social media. Effects and filters bring your photos to life with easy yet impressive post-processing that takes only a few clicks. -->
+ 1. This a web based photo editor .
+ 2. You can do basic editing like cropping, contrast and exposure .
+ 4. Effects and filters bring your photos to life with easy yet impressive post-processing that takes only a few clicks.
+
+
+ <!-- 3.This web application will help you to edit your photo very quickly(even in a few minites).. -->
 
 <br />
 
@@ -93,7 +99,14 @@ You should know the basics of HTML5, CSS3 and Javascript.
 
 ### Installation ⚙️
 
-You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
+1. You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
+2. The web application will be served at http://localhost:5500/
+3. Go to http://localhost:5500/ in your browser and edit your photo. 
+
+### Usage
+ 1. There is a crop feature in this web application which will help you to crop and resize your photo.
+ 2. Other than cropping you can use features like LightBulb , Eyedropper , Icicles , Exposure.
+3. There are some filters like GreyScale , Sepia , Amaro , Lark you can use to make your photo more beautiful. 
 
 <!-- USAGE EXAMPLES -->
 
