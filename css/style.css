@@ -152,12 +152,12 @@ a:link, a:visited{
   margin-bottom: 15%;
   color:white;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 2.5vw;
   text-align:center;
   margin-top: 4em;
  
 }
-a:hover{
+/*a:hover{
     text-decoration: none;
 transition: 0.2s ease-in-out;
   cursor: pointer;
@@ -165,7 +165,7 @@ transition: 0.2s ease-in-out;
     border:hotpink 1px solid;
     padding:5px 10px 5px 10px;
     border-radius: 20px;
-}
+}*/
 .upload-btn > .upload-img > p{
   font-size: 25px;
   padding: 5px;
@@ -257,7 +257,7 @@ transition: 0.2s ease-in-out;
   padding: 20px;
   margin: 20px;
   display:flex;
-  margin-left:386;
+  margin-left:0vw;
 }
 .editor > .tool > .essential-tool > .action-tool{
   display:inline-block;
@@ -282,7 +282,7 @@ transition: 0.2s ease-in-out;
 .editor > .tool > .essential-tool > .action-tool > .fus:hover{
   background: pink;
   transform:scale(1.1);
-.editor > .tool > .essential-tool > .action-tool > .fus:before{
+/*.editor > .tool > .essential-tool > .action-tool > .fus:before{*/
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
@@ -299,17 +299,17 @@ transition: 0.2s ease-in-out;
     border-radius: 10px;
 }
 
-.editor > .tool > .essential-tool > .action-tool > .fus:active {
-    color: #000
+/*.editor > .tool > .essential-tool > .action-tool > .fus:active {
+    color: plum
 }
 
 .editor > .tool > .essential-tool > .action-tool > .fus:active:after {
-    background: transparent;
+    transform:scale (1.5);
 }
 
 .editor > .tool > .essential-tool > .action-tool > .fus:hover:before {
-    opacity: 1;
-}
+    opacity: 0;
+}*/
 
 .editor > .tool > .essential-tool > .action-tool > .fus:after {
     z-index: -1;
@@ -317,11 +317,11 @@ transition: 0.2s ease-in-out;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(10, 10, 10);
+    background:lightcoral;
     left: 0;
     top: 0;
     border-radius: 10px;
-
+display:grid;
 }
 
 @keyframes glowing {
