@@ -194,6 +194,9 @@ function applyFilter(filter){
         case "prison":
             doPrison();
             break;
+        case "crumble":
+            doCrumble();
+            break;
         case "remove":
             remove();
             
@@ -424,6 +427,24 @@ function doPrison(){
        
     }
 
+    ctx.putImageData(imageData, 0, 0);
+}
+
+
+//crumble filter
+function doCrumble(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i=0;i<data.length;i+=4){
+        var ran=Math.random();
+        if(ran>0.5){
+            var p=i+1;
+            data[p]=data[i];
+            data[p+1]=data[i+1];
+            data[p+2]=data[i+2];
+
+        }
+    }
     ctx.putImageData(imageData, 0, 0);
 }
 
