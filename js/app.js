@@ -185,6 +185,9 @@ function applyFilter(filter){
         case "flip":
             doFlip();
             break;
+        case "sunset":
+            doSunset();
+            break;
         case "remove":
             remove();
             
@@ -259,6 +262,17 @@ function doFlip(){
         data[i + 2]=d1;
     }
     ctx.putImageData(imageData, 0, 0);
+}
+
+//sunset filter
+function doSunset(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i=0;i<data.length;i+=4){
+        data[i]=255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+
 }
 
 //val should be from -1 to 1 and 0 for unchanged
