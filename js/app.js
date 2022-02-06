@@ -188,6 +188,9 @@ function applyFilter(filter){
         case "sunset":
             doSunset();
             break;
+        case "rainbow":
+            doRainbow();
+            break;
         case "remove":
             remove();
             
@@ -271,6 +274,110 @@ function doSunset(){
     for(let i=0;i<data.length;i+=4){
         data[i]=255;
     }
+    ctx.putImageData(imageData, 0, 0);
+
+}
+
+//Rainbow filter
+function doRainbow(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+   for(let i=0;i<data.length;i+=4){
+       var avg= (data[i]+data[i+1]+data[i+2])/3;
+       if(i>=0 && i<data.length/7){
+           if(avg<128){
+               data[i]=2*avg;
+               data[i+1]=0;
+               data[i+2]=0;
+           }
+           else if(avg>=128){
+               data[i]=255;
+               data[i+1]=(2*avg)-255;
+               data[i+2]=(2*avg)-255;
+           }
+       }
+
+       if(i>=data.length/7 && i<(data.length*2)/7){
+        if(avg<128){
+            data[i]=2*avg;
+            data[i+1]=0.8*avg;
+            data[i+2]=0;
+        }
+        else if(avg>=128){
+            data[i]=255;
+            data[i+1]=(1.2*avg)-51;
+            data[i+2]=(2*avg)-255;
+        }
+       }
+
+       if( i>=(data.length*2)/7 && i<data.length*3/7){
+        if(avg<128){
+            data[i]=2*avg;
+            data[i+1]=2*avg;
+            data[i+2]=0;
+        }
+        else if(avg>=128){
+            data[i]=255;
+            data[i+1]=255;
+            data[i+2]=(2*avg)-255;
+        }
+       }
+
+       if( i>=data.length*3/7 && i<data.length*4/7){
+        if(avg<128){
+            data[i]=0;
+            data[i+1]=2*avg;
+            data[i+2]=0;
+        }
+        else if(avg>=128){
+            data[i]=(2*avg)-255;
+            data[i+1]=255;
+            data[i+2]=(2*avg)-255;
+        }
+       }
+
+       if( i>=data.length*4/7 && i<data.length*5/7){
+        if(avg<128){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=2*avg;
+        }
+        else if(avg>=128){
+            data[i]=(2*avg)-255;
+            data[i+1]=(2*avg)-255;
+            data[i+2]=255;
+        }
+       }
+
+       if( i>=data.length*5/7 && i<data.length*6/7){
+        if(avg<128){
+            data[i]=0.8*avg;
+            data[i+1]=0;
+            data[i+2]=2*avg;
+        }
+        else if(avg>=128){
+            data[i]=(1.2*avg)-51;
+            data[i+1]=(2*avg)-255;
+            data[i+2]=255;
+        }
+       }
+
+       if( i>=data.length*6/7 ){
+        if(avg<128){
+            data[i]=1.6*avg;
+            data[i+1]=0;
+            data[i+2]=1.6*avg;
+        }
+        else if(avg>=128){
+            data[i]=(0.4*avg)+153;
+            data[i+1]=(2*avg)-255;
+            data[i+2]=(0.4*avg)+153;
+        }
+       }
+
+        
+
+   }
     ctx.putImageData(imageData, 0, 0);
 
 }
