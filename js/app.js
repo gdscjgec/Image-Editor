@@ -182,6 +182,9 @@ function applyFilter(filter){
         case "amaro":
             doAmaro();
             break;
+        case "flip":
+            doFlip();
+            break;
         case "remove":
             remove();
             
@@ -240,6 +243,21 @@ function doAmaro(){
     var data = imageData.data;
     brightness(data,0.15);
     saturation(data,0.3);
+    ctx.putImageData(imageData, 0, 0);
+}
+
+//simple algorithm to flip image
+function doFlip(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i = 0; i < data.length; i += 4){
+        var d1=data[i];
+        var d2= data[i+1];
+        var d3=data[i+2];
+        data[i]=d2;
+        data[i + 1]=d3;
+        data[i + 2]=d1;
+    }
     ctx.putImageData(imageData, 0, 0);
 }
 
