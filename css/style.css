@@ -694,7 +694,21 @@ input:checked + .slider:before {
 #lark {
   background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
 }
-
+#flip {
+  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+}
+#rainbow {
+  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+}
+#sunset {
+  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+}
+#crumble {
+  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+}
+#prison {
+  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+}
 /* -----------responsive---------- */
 @media screen and (max-width: 1514px){
   .navigation > .theme-switch-wrapper{
