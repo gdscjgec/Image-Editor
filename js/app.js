@@ -191,6 +191,9 @@ function applyFilter(filter){
         case "rainbow":
             doRainbow();
             break;
+        case "prison":
+            doPrison();
+            break;
         case "remove":
             remove();
             
@@ -380,6 +383,48 @@ function doRainbow(){
    }
     ctx.putImageData(imageData, 0, 0);
 
+}
+
+
+//prison filter
+function doPrison(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i=0;i<data.length;i+=4){
+        if(i>=0 && i<1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length/6 && i<(data.length/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*2/6 && i<(data.length*2/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*3/6 && i<(data.length*3/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*4/6 && i<(data.length*4/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*5/6 && i<(data.length*5/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+       
+    }
+
+    ctx.putImageData(imageData, 0, 0);
 }
 
 //val should be from -1 to 1 and 0 for unchanged
