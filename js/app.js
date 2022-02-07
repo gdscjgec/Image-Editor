@@ -182,6 +182,21 @@ function applyFilter(filter){
         case "amaro":
             doAmaro();
             break;
+        case "flip":
+            doFlip();
+            break;
+        case "sunset":
+            doSunset();
+            break;
+        case "rainbow":
+            doRainbow();
+            break;
+        case "prison":
+            doPrison();
+            break;
+        case "crumble":
+            doCrumble();
+            break;
         case "remove":
             remove();
             
@@ -240,6 +255,196 @@ function doAmaro(){
     var data = imageData.data;
     brightness(data,0.15);
     saturation(data,0.3);
+    ctx.putImageData(imageData, 0, 0);
+}
+
+//simple algorithm to flip image
+function doFlip(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i = 0; i < data.length; i += 4){
+        var d1=data[i];
+        var d2= data[i+1];
+        var d3=data[i+2];
+        data[i]=d2;
+        data[i + 1]=d3;
+        data[i + 2]=d1;
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+
+//sunset filter
+function doSunset(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i=0;i<data.length;i+=4){
+        data[i]=255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+}
+
+//Rainbow filter
+function doRainbow(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+   for(let i=0;i<data.length;i+=4){
+       var avg= (data[i]+data[i+1]+data[i+2])/3;
+       if(i>=0 && i<data.length/7){
+           if(avg<128){
+               data[i]=2*avg;
+               data[i+1]=0;
+               data[i+2]=0;
+           }
+           else if(avg>=128){
+               data[i]=255;
+               data[i+1]=(2*avg)-255;
+               data[i+2]=(2*avg)-255;
+           }
+       }
+
+       if(i>=data.length/7 && i<(data.length*2)/7){
+        if(avg<128){
+            data[i]=2*avg;
+            data[i+1]=0.8*avg;
+            data[i+2]=0;
+        }
+        else if(avg>=128){
+            data[i]=255;
+            data[i+1]=(1.2*avg)-51;
+            data[i+2]=(2*avg)-255;
+        }
+       }
+
+       if( i>=(data.length*2)/7 && i<data.length*3/7){
+        if(avg<128){
+            data[i]=2*avg;
+            data[i+1]=2*avg;
+            data[i+2]=0;
+        }
+        else if(avg>=128){
+            data[i]=255;
+            data[i+1]=255;
+            data[i+2]=(2*avg)-255;
+        }
+       }
+
+       if( i>=data.length*3/7 && i<data.length*4/7){
+        if(avg<128){
+            data[i]=0;
+            data[i+1]=2*avg;
+            data[i+2]=0;
+        }
+        else if(avg>=128){
+            data[i]=(2*avg)-255;
+            data[i+1]=255;
+            data[i+2]=(2*avg)-255;
+        }
+       }
+
+       if( i>=data.length*4/7 && i<data.length*5/7){
+        if(avg<128){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=2*avg;
+        }
+        else if(avg>=128){
+            data[i]=(2*avg)-255;
+            data[i+1]=(2*avg)-255;
+            data[i+2]=255;
+        }
+       }
+
+       if( i>=data.length*5/7 && i<data.length*6/7){
+        if(avg<128){
+            data[i]=0.8*avg;
+            data[i+1]=0;
+            data[i+2]=2*avg;
+        }
+        else if(avg>=128){
+            data[i]=(1.2*avg)-51;
+            data[i+1]=(2*avg)-255;
+            data[i+2]=255;
+        }
+       }
+
+       if( i>=data.length*6/7 ){
+        if(avg<128){
+            data[i]=1.6*avg;
+            data[i+1]=0;
+            data[i+2]=1.6*avg;
+        }
+        else if(avg>=128){
+            data[i]=(0.4*avg)+153;
+            data[i+1]=(2*avg)-255;
+            data[i+2]=(0.4*avg)+153;
+        }
+       }
+
+        
+
+   }
+    ctx.putImageData(imageData, 0, 0);
+
+}
+
+
+//prison filter
+function doPrison(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i=0;i<data.length;i+=4){
+        if(i>=0 && i<1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length/6 && i<(data.length/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*2/6 && i<(data.length*2/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*3/6 && i<(data.length*3/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*4/6 && i<(data.length*4/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+        if(i>=data.length*5/6 && i<(data.length*5/6)+10+1195){
+            data[i]=0;
+            data[i+1]=0;
+            data[i+2]=0;
+        }
+       
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+}
+
+
+//crumble filter
+function doCrumble(){
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = imageData.data;
+    for(let i=0;i<data.length;i+=4){
+        var ran=Math.random();
+        if(ran>0.5){
+            var p=i+1;
+            data[p]=data[i];
+            data[p+1]=data[i+1];
+            data[p+2]=data[i+2];
+
+        }
+    }
     ctx.putImageData(imageData, 0, 0);
 }
 
