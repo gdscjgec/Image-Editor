@@ -67,6 +67,25 @@
           <i class="fas fa-crop"></i>
           <p>Crop</p>
         </div>
+
+        <!-- resize button creation by Sayan Kumar-->
+        <div id="resize-button" class="action-tool">
+          <button class="dropbtn"><i class="fas fa-expand"></i></button>
+          <div class="dropup-content">
+            <div class="dimensions">
+              <input type="text" id="input_width" class="resizer__input--width" value="0">
+              x
+              <input type="text" id="input_height" class="resizer__input--height" value="0">
+              <label>
+                <input type="checkbox" id="check_aspect-ratio" class="resizer__aspect" checked>
+                Keep Aspect Ratio
+              </label>
+            </div>
+          </div>
+          <p>Resize</p>
+        </div>
+        <!-- ending of resize button -->
+
         <div class="action-tool">
           <i class="fas fa-lightbulb"></i>
           <p>LightBulb</p>
