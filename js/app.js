@@ -17,6 +17,11 @@ const changeControl = {
 var flag=true;
 const themeSwitch = document.querySelector('input');
 
+const fileInput = document.querySelector("#input-field");
+const widthInput = document.querySelector("#input_width");
+const heightInput = document.querySelector("#input_height");
+const aspectToggle = document.querySelector("#check_aspect-ratio");
+const canvasCtx = canvas.getContext("2d");
 themeSwitch.addEventListener('change', () => {
 	if (!isDark) {
 		document.getElementById("dark").style.display = "none"
@@ -117,6 +122,63 @@ const cropImage = () => {
    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
    canvas.addEventListener("mousedown", (event) => startCrop(imageData, event));
 };
+
+
+// Resizer scripting.....by Sayan Kumar
+let activeImage, originalWidthToHeightRatio;
+
+fileInput.addEventListener("change", (e) => {
+  const reader = new FileReader();
+
+  reader.addEventListener("load", () => {
+    openImage(reader.result);
+  });
+
+  reader.readAsDataURL(e.target.files[0]);
+});
+
+widthInput.addEventListener("change", () => {
+  if (!activeImage) return;
+
+  const heightValue = aspectToggle.checked
+    ? widthInput.value / originalWidthToHeightRatio
+    : heightInput.value;
+
+  resize(widthInput.value, heightValue);
+});
+
+heightInput.addEventListener("change", () => {
+  if (!activeImage) return;
+
+  const widthValue = aspectToggle.checked
+    ? heightInput.value * originalWidthToHeightRatio
+    : widthInput.value;
+
+  resize(widthValue, heightInput.value);
+});
+
+function openImage(imageSrc) {
+  activeImage = new Image();
+
+  activeImage.addEventListener("load", () => {
+    originalWidthToHeightRatio = activeImage.width / activeImage.height;
+
+    resize(activeImage.width, activeImage.height);
+  });
+
+  activeImage.src = imageSrc;
+}
+
+function resize(width, height) {
+  canvas.width = Math.floor(width);
+  canvas.height = Math.floor(height);
+  widthInput.value = Math.floor(width);
+  heightInput.value = Math.floor(height);
+
+  canvasCtx.drawImage(activeImage, 0, 0, Math.floor(width), Math.floor(height));
+  canvasCtx.putImageData(activeImage, 0, 0, Math.floor(width), Math.floor(height));
+}
+//end of resizer scripting
 
 // Show Exposure Range
 const showExposureRange = () => {
