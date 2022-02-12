@@ -81,6 +81,8 @@ const doCrop = (initialCoords, imageData, event) => {
 
 // Crop and set the new image with mouseup
 const endCrop = (initialCoords, event) => {
+    //after crop is done revert back to original cursor
+    document.body.style.cursor = "default";
    const rect = canvas.getBoundingClientRect();
    const coords = {
       x: ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width,
@@ -103,11 +105,15 @@ const endCrop = (initialCoords, event) => {
    ctx = canvas.getContext("2d");
 
    // setting up the cropped image
-   ctx.putImageData(croppedImage, 0, 0);
+   // to the starting position of cropped image
+   ctx.putImageData(croppedImage, initialCoords.x, initialCoords.y);
 };
 
 // Crop when mousedown
 const startCrop = (imageData, event) => {
+    //set cursor to crosshair on crop start
+    document.body.style.cursor = "crosshair";
+    
    const rect = canvas.getBoundingClientRect();
    const initialCoords = {
       x: ((event.clientX - rect.left) / (rect.right - rect.left)) * canvas.width,
