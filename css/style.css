@@ -314,6 +314,11 @@ a#save-now {
   transition: box-shadow 2s ease-in;
   border: none;
 }
+.editor > .tool > .essential-tool > .action-tool > div:hover{
+  color: black;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
+  transform: scale(1.1);
+}
 
 .action-tool p{
   margin-top: 15%;
