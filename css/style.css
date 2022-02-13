@@ -8,14 +8,15 @@
   
 }
 :root{
-  --primary-text-color:rgb(14, 2, 31);
+  --primary-text-color:rgb(48, 25, 80);
   --secondary-text-color:white;
-  --button-color: rgb(59, 35, 194);
+  --button-color: rgb(101, 81, 211);
   --primary-bg-color:rgb(241, 241, 241);
   --background-light-mode-img: url("../assets/images/light-mode-bg.jpg");
   --background-dark-mode-img: url("../assets/images/dark-mode-bg.jpg");
   --turn : 0deg;
   font-weight: bold;
+
 }
 
 body{
@@ -232,7 +233,7 @@ a#save-now {
   height: 40px;
   /* background-color: #CD443F; */  
   cursor: pointer;
-  background: linear-gradient(45deg,rgb(37, 22, 173),rgb(85, 57, 150));
+  background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
   padding: 12px;
   text-align: center;
   color: rgb(255, 247, 252);
@@ -242,7 +243,7 @@ a#save-now {
   border: none;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas:hover{
-  background: rgb(31, 4, 4);
+  background: rgb(139, 138, 209);
   transform:scale(1.1);
 }
 
@@ -262,9 +263,13 @@ a#save-now {
   box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
   border: none;
 }
+.editor > .tool > .essential-tool > .action-tool > .dropbtn:hover > p{
+  background: linear-gradient(45deg,rgb(206, 205, 223),rgb(85, 57, 150));
+}
 .editor > .tool > .essential-tool > .action-tool > .dropbtn:hover{
-  background: rgb(31, 4, 4);
+  background: rgb(139, 138, 209);
   transform:scale(1.1);
+  
 }
 
 .editor > .tool > .essential-tool > .action-tool{
@@ -286,38 +291,42 @@ a#save-now {
 .editor > .tool > .essential-tool > .action-tool > .dropup-content > .dimensions > .resizer__input--width {
   width: 75px;
   padding: 5px;
+  background:#5becd4;
 }
 .editor > .tool > .essential-tool > .action-tool > .dropup-content > .dimensions > .resizer__input--height {
   width: 75px;
   padding: 5px;
+  background:#5becd4;
 }
 
 .editor > .tool > .essential-tool > .action-tool:hover .dropup-content {
   display: block;
+  /* background:#5becd4; */
+
 }
 
 /* ending Hover dropup menu*/
-
 
 .editor > .tool > .essential-tool > .action-tool > div{
   text-decoration: none;
   background-color: #CD443F; 
   padding: 5px;
-  border:1px solid rgba(112, 6, 86, 0.932);
+  border:1px solid rgba(172, 42, 42, 0.932);
   border-radius:  15%;
-  color: rgb(61, 37, 148);
+  color: rgb(19, 16, 32);
   font-weight: bold;
-  border-radius: 12px;
+  border-radius: 25px;
   cursor: pointer;
-  background: linear-gradient(45deg,rgb(245, 248, 81),rgba(207, 20, 36, 0.623));
+  background: linear-gradient(45deg,rgb(50, 18, 116),rgba(136, 105, 223, 0.623));
   animation: animate 2s linear infinite;
   transition: box-shadow 2s ease-in;
   border: none;
 }
 .editor > .tool > .essential-tool > .action-tool > div:hover{
-  color: black;
+  color: rgb(53, 21, 21);
   box-shadow: 0.2rem 0.2rem 0.5rem rgb(85, 83, 83);
   transform: scale(1.1);
+  
 }
 
 .action-tool p{
@@ -332,12 +341,13 @@ a#save-now {
   }
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled{
-  background: black;
+  background: rgb(77, 22, 22);
   box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgb(236, 84, 191);
   cursor: not-allowed;
 }
 .editor > .tool > .essential-tool > .action-tool > .fas.disabled:hover{
   background: rgba(87, 14, 24, 0.781);
+ 
 }
 .editor > .canvas{
   padding: 20px;
@@ -383,7 +393,7 @@ a#save-now {
   background-repeat: no-repeat;
 }
 
-.exposure-box {
+/* .exposure-box {
   width: 300px;
   padding: 1rem;
   border-radius: 8px;
@@ -392,7 +402,7 @@ a#save-now {
   color: #fff;
   flex-direction: column;
   row-gap: 0.5rem;
-}
+} */
 #range{
   -webkit-appearance: none;
   width: 100%;
@@ -735,33 +745,118 @@ input:checked + .slider:before {
 }
 
 #grey-scale {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+  color: whitesmoke;
+}
+#grey-scale:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 
 #sepia {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 205, 238));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+   background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+  /* border:#000 solid; */
+  color: whitesmoke;
+}
+#sepia:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #amaro {
-  background: linear-gradient(90deg,rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+     background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+  color: whitesmoke;
+}
+#amaro:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #lark {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+    background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+ color: whitesmoke;
+}
+#lark:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #flip {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+   background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+color: whitesmoke;
+}
+#flip:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #rainbow {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+     background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+  color: whitesmoke;
+}
+#rainbow:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #sunset {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15x;
+     background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+  color: whitesmoke;
+}
+#sunset:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #crumble {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+     background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+  color: whitesmoke;
+}
+#crumble:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
 }
 #prison {
-  background: linear-gradient(90deg, rgb(174, 168, 224),rgb(241, 210, 239));
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+     background: linear-gradient(45deg,rgb(37, 22, 173),rgb(159, 147, 185));
+ color: whitesmoke;
+
 }
+#prison:hover {
+  
+  background: rgb(139, 138, 209);
+  transform:scale(1.1);
+}
+
+  /* border:#000 solid; */
 /* -----------responsive---------- */
 @media screen and (max-width: 1514px){
   .navigation > .theme-switch-wrapper{
@@ -800,9 +895,11 @@ input:checked + .slider:before {
   }
   .tool > .essential-tool > .action-tool{
     min-width: 130px;
+ 
   }
   .editor > .tool > .essential-tool{
     margin: 0;
+
   }
   .footer{
     position: absolute;
