@@ -1,206 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Quick photo Editor | Edit your photo Quickly</title>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./assets/favicon/site.webmanifest">
-</head>
-
-<body>
-  <div class="logo">
-    <img src="./assets/logo/logo_gif.gif" alt="logo" width="100px">
-  </div>
-  <header class="upload-tag">
-<h1>Quick Photo Editor Tool for Quick Editing</h1>
-  </header>
-  <section class="navigation">
-    <!-- <div class="logo">
-      <img src="./assets/logo/logo_gif.gif" alt="logo">
-    </div> -->
-    <div class="theme-switch-wrapper">
-      <i class="fas fa-cloud-moon" id="dark"></i>
-      <i class="fas fa-cloud-sun" id="light"></i>
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round">
-        </div>
-      </label>
-    </div>
-    <div class="download-img">
-      <a href="#" class="save-now" id="save-now">
-        <i class="far fa-save"></i>
-        Save Now</a>
-    </div>
-  </section>
-
-  <section class="upload-btn">
-    <div class="upload-img">
-      <!-- <p id = "upload-tag">Quick Photo Editor Tool for Quick Editing</p> -->
-      <input type="file" id="input-field" accept="image/png, image/jpeg" hidden>
-      <a href="#" id="upload" class="upload" onclick="uploadbtnActive()"><i class="fas fa-upload"></i><span>Upload an image</span></a>
-    </div>
-  </section>
-
-  <section class="editor">
-    <div class="canvas">
-      <canvas class="img-box" id="img-box">
-      </canvas>
-      <div class="uploaded-img-container">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p>No file uploaded, yet!</p>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick photo Editor | Edit your photo Quickly</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/range-input.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <div id="banner">
+      <div class="logo">
+        <img src="./assets/logo/logo_gif.gif" alt="logo" width="100px" />
+      </div>
+    
+      <div class="download-button">
+        <button class="download" class="download-img">
+          <a href="#" class="save-now" id="save-now">
+            <span
+              ><img src="./assets/svg/download.svg" alt="download-icon"
+            /></span>
+            Download</a
+          >
+        </button>
       </div>
     </div>
-    <div class="tool">
+    <div id="left">
+      <div id="tools">
+        <div id="tool">
+          <h5>Tools</h5>
+          <button id="crop-button" class="action-tool" title="Crop">
+            <i class="fas fa-crop"></i>
+          </button>
 
-      <!-- Essential tool Start here -->
-      <div class="essential-tool" id="essentail-tool">
-        <div id="crop-button" class="action-tool">
-          <i class="fas fa-crop"></i>
-          <p>Crop</p>
+          <button class="action-tool" title="LightBulb">
+            <i class="fas fa-lightbulb"></i>
+          </button>
+
+          <button class="action-tool" title="Eyedropper">
+            <i class="fas fa-eye-dropper"></i>
+          </button>
+
+          <button class="action-tool" title="Icicles">
+            <i class="fas fa-icicles"></i>
+          </button>
+
+          <button class="action-tool" onclick="rotate()" title="Rotate">
+            <i class="fas fa-rotate"></i>
+          </button>
         </div>
-
-        <!-- resize button creation by Sayan Kumar-->
-        <div id="resize-button" class="action-tool">
-          <button class="dropbtn"><i class="fas fa-expand"></i></button>
-          <div class="dropup-content">
-            <div class="dimensions">
-              <input type="text" id="input_width" class="resizer__input--width" value="0">
-              x
-              <input type="text" id="input_height" class="resizer__input--height" value="0">
-              <label>
-                <input type="checkbox" id="check_aspect-ratio" class="resizer__aspect" checked>
-                Keep Aspect Ratio
-              </label>
+        <div id="exposure">
+          <h5>Exposure</h5>
+          <div class="exposure-box">
+            <input
+            style="background-color: transparent;"
+              class="styled-slider slider-progress"
+              type="range"
+              id="range"
+              min="0"
+              max="200"
+            />
+          </div>
+        </div>
+        <div id="resize">
+          <h5>Resize</h5>
+          <div id="resize-button" class="resize">
+            <div class="dropup-content">
+              <div class="dimensions">
+                <div class="input">
+                  <input
+                    type="text"
+                    id="input_width"
+                    class="resizer__input--width"
+                    value="0"
+                  />
+                  <span>x</span>
+                  <input
+                    type="text"
+                    id="input_height"
+                    class="resizer__input--height"
+                    value="0"
+                  />
+                </div>
+                <div class="aspect">
+                  <label>
+                    <input
+                      type="checkbox"
+                      id="check_aspect-ratio"
+                      class="resizer__aspect"
+                      checked
+                    />
+                    <span>Keep Aspect Ratio</span>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
-          <p>Resize</p>
-        </div>
-        <!-- ending of resize button -->
-
-        <div class="action-tool">
-          <i class="fas fa-lightbulb"></i>
-          <p>LightBulb</p>
-        </div>
-        <div class="action-tool">
-          <i class="fas fa-eye-dropper"></i>
-          <p>Eyedropper</p>
-        </div>
-        <div class="action-tool">
-          <i class="fas fa-icicles"></i>
-          <p>Icicles</p>
-        </div>
-        <div class="action-tool" onclick="showExposureRange()">
-          <input id="exposure-range" type="range" min="-100" max="100" value="0" onchange="changeExposure(event)">
-          <i id="exposure-icon" class="fas fa-lightbulb"></i>
-          <p>Exposure</p>
-        </div>
-        <div class="action-tool" onclick=rotate()>
-          <i class="fas fa-rotate"></i>
-          <p>Rotate</p>
         </div>
       </div>
-      <!-- Essential tool end here -->
-
-      <!-- handy tool Start here -->
-      <div class="essential-tool" id="handy-tool">
-        <div class="action-tool" onclick=unDo()>
+      <div id="upload">
+        <button class="upload-img">
+          <input
+            type="file"
+            id="input-field"
+            accept="image/png, image/jpeg"
+            hidden
+          />
+          <a href="#" id="upload" class="upload" onclick="uploadbtnActive()"
+            ><i class="fas fa-upload"></i><span>Upload</span></a
+          >
+        </button>
+      </div>
+    </div>
+    <div id="middle">
+      <div class="canvas">
+        <canvas class="img-box" id="img-box"> </canvas>
+        <div class="uploaded-img-container">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>No file uploaded, yet!</p>
+        </div>
+      </div>
+      <div id="dos">
+        <button class="action-tool undo" onclick="unDo()">
           <i id="undo-btn" class="fas fa-undo disabled"></i>
           <p>Undo</p>
-        </div>
-        <div class="action-tool" onclick=reDo()>
+        </button>
+        <button class="action-tool redo" onclick="reDo()">
           <i id="redo-btn" class="fas fa-redo disabled"></i>
           <p>Redo</p>
-        </div>
-        <div class="action-tool" onclick="applyFilter('remove')">
-          <i id="delete" id="close-btn" class="fas fa-close"></i>
-          <p>Delete</p>
-        </div>
+        </button>
       </div>
-      
-      <!-- handy tool end here -->
-
-      <!-- Filter tool start here -->
-
-      <div class="essential-tool" id="essential-tool">
-        <div class="action-tool">
-          <div id="grey-scale" onclick="applyFilter('grey')">GreyScale</div>
-        </div>
-        <div class="action-tool">
-          <div id="sepia" onclick="applyFilter('sepia')">Sepia</div>
-        </div>
-        <div class="action-tool">
-          <div id="amaro" onclick="applyFilter('amaro')">Amaro</div>
-        </div>
-        <div class="action-tool">
-          <div id="lark" onclick="applyFilter('lark')">Lark</div>
-        </div>
-        <div class="action-tool">
-          <div id="flip" onclick="applyFilter('flip')">Flip</div>
-        </div>
-        <div class="action-tool">
-          <div id="rainbow" onclick="applyFilter('rainbow')">Rainbow</div>
-        </div>
-        <div class="action-tool">
-          <div id="crumble" onclick="applyFilter('crumble')">Crumble</div>
-        </div>
-        <div class="action-tool">
-          <div id="sunset" onclick="applyFilter('sunset')">Sunset</div>
-        </div>
-        <div class="action-tool">
-          <div id="prison" onclick="applyFilter('prison')">Prison</div>
-        </div>
-      </div>
-      <!-- <div class="exposure-box">
-        <label>Exposure</label>
-        <input type="range" id="range" min="0" max="200">
-     </div> -->
-      <!-- Filter tool End here -->
-
     </div>
-
-  </section>
-
-  <section class="footer">
-    <!--
-    <div class="social-icons">
-      
-      <a href="" class="social-icon social-icon--github">
-          <i class="fab fa-github"></i> 
-          <div class="tooltip">Like:250</div>
-        </a>
-        
-        <a href="" class="social-icon social-icon--twitter">
-          <i class="fab fa-twitter"></i>
-          <div class="tooltip">Followers:13K</div>
-        </a>
-       
-        <a href="" class="social-icon social-icon--youtube">
-          <i class="fab fa-youtube"></i> 
-          <div class="tooltip">Subscriber:22K</div>
-        </a>
-        
-        <a href="" class="social-icon social-icon--instagram">
-          <i class="fab fa-instagram"></i> 
-          <div class="tooltip">Followers:1.2K</div>
-        </a>
-        
-        <a href="" class="social-icon social-icon--facebook">
-          <i class="fab fa-facebook"></i> 
-          <div class="tooltip">Friends:7K</div>
-        </a>
-  </div>
--->
-  </section>
-  <script src="./js/app.js"></script>
-</body>
-
+    <div id="right">
+      <div id="tools">
+        <h5>Filter</h5>
+        <button class="action-tool">
+          <div id="grey-scale" onclick="applyFilter('grey')">GreyScale</div>
+        </button>
+        <button class="action-tool">
+          <div id="sepia" onclick="applyFilter('sepia')">Sepia</div>
+        </button>
+        <button class="action-tool">
+          <div id="amaro" onclick="applyFilter('amaro')">Amaro</div>
+        </button>
+        <button class="action-tool">
+          <div id="lark" onclick="applyFilter('lark')">Lark</div>
+        </button>
+        <button class="action-tool">
+          <div id="flip" onclick="applyFilter('flip')">Flip</div>
+        </button>
+        <button class="action-tool">
+          <div id="rainbow" onclick="applyFilter('rainbow')">Rainbow</div>
+        </button>
+        <button class="action-tool">
+          <div id="crumble" onclick="applyFilter('crumble')">Crumble</div>
+        </button>
+        <button class="action-tool">
+          <div id="sunset" onclick="applyFilter('sunset')">Sunset</div>
+        </button>
+        <button class="action-tool">
+          <div id="prison" onclick="applyFilter('prison')">Prison</div>
+        </button>
+      </div>
+      <div id="Clear">
+        <button class="Clear" onclick="applyFilter('remove')">
+          <input
+            type="file"
+            id="input-field"
+            accept="image/png, image/jpeg"
+            hidden
+          />
+          <a href="#" id="upload" class="upload" onclick="uploadbtnActive()"
+            >  <i id="delete" id="close-btn" class="fas fa-close"></i></i><span>Clear</span></a
+          >
+        </button>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+    <script>
+      for (let e of document.querySelectorAll(
+        'input[type="range"].slider-progress'
+      )) {
+        e.style.setProperty("--value", e.value);
+        e.style.setProperty("--min", e.min == "" ? "0" : e.min);
+        e.style.setProperty("--max", e.max == "" ? "100" : e.max);
+        e.addEventListener("input", () =>
+          e.style.setProperty("--value", e.value)
+        );
+      }
+    </script>
+  </body>
 </html>
