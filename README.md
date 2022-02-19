@@ -1,139 +1,93 @@
 <div align="center">
-  <img align="center" src="assets/logo/logo_gif.gif" alt="Logo" height="90">
-  <h2 align="center">Quick Image Editor</h2>
-   <p align="center">
-    A simple web based Image editor for all your editing needs.
-  </p>
-  <p>
-      <a href="https://gdscjgec.github.io/Image-Editor/">View Demo</a>
-      |
-      <a href="#">Report Bug</a>
-      |
-      <a href="#">Request Feature</a>
-    </p>
+   <img align="center" src="assets/logo/logo_gif.gif" alt="Logo" width="30%">
+   <h1 align="center">Quick Image Editor</h1>
 </div>
-<br />
-<p align="center">Participating in</p>
+<div align="center">
+   <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
+   <img src="https://forthebadge.com/images/badges/open-source.svg" />
+</div>
+<h3 align="center">Participating in</h3>
 <div align="center"><a href="#"><img src="https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg" alt="Banner" width="50%"/></a></div>
 <br><br>
 <div align="center"><a href="#"><img src="https://d33wubrfki0l68.cloudfront.net/710cb0d537d2e7fa6246445c0977ecc994f05f5a/6a3b4/assets/img/jwoc_logo.svg" alt="Banner" width="30%"/></a></div>
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <p align="center"> And Organised by</p>
-  <a href="https://github.com/gdscjgec">
-    <img src="assets/images/GDSC.png" alt="Logo" height="80">
-  </a>
-  <br />
-  <a href="#"><strong>Explore the docs 🗺️</strong></a>
-</div>
+## About The Project
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+A web based image editor for all your editing needs. Use stunning filters and other tools to create and share amazing pics!
 
-<!-- ABOUT THE PROJECT -->
-<br />
+## Features
 
-## About The Project 📍
+- Apply Amazing Effects
+- Crop, Rotate, and Resize
+- Adjust Exposure
+- Blur Filter
+- And Much More!
 
-<img align="center" src="assets/features.gif" alt="Logo" width="100%">
+## Tech Stack
 
-\
-<!-- A Quick Photo Editor is an Online editing tool where you can do basic editing like cropping, contrast and exposure. 
-It's easy to enhance and beautify your photos and share them on Facebook and other social media. Effects and filters bring your photos to life with easy yet impressive post-processing that takes only a few clicks. -->
- 1. This a web based photo editor .
- 2. You can do basic editing like cropping, contrast and exposure .
- 4. Effects and filters bring your photos to life with easy yet impressive post-processing that takes only a few clicks.
+![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
+## Demo
 
- <!-- 3.This web application will help you to edit your photo very quickly(even in a few minites).. -->
+<img src="https://user-images.githubusercontent.com/77227201/154798130-5ca8f233-043d-4e5b-8545-9b491aa2ed8c.png" />
 
-<br />
-
-## Built With ⛏️
-
-- [HTML](https://html.spec.whatwg.org/multipage/)
-- [CSS](hhttps://www.w3.org/Style/CSS/Overview.en.html)
-- [JavaScript](https://www.javascript.com/)
-
-And so much love ❤️
-<!-- GETTING STARTED -->
-
-<br />
-
-## Getting Started ⚡️
-
-To get started just fork the repository and make a clone .
-
-### Prerequisites
-
-You should know the basics of HTML5, CSS3 and Javascript.
-
-- From git CLI
-  ```sh
-  git clone https://github.com/gdscjgec/Image-Editor.git
-  ```
-
-### Installation ⚙️
-
-1. You don't need to install anything , javascript run on browser so just install any browser like chrome or Firefox if you don't have.
-
-
-### Usage
- 1. There is a crop feature in this web application which will help you to crop and resize your photo.
- 2. Other than cropping you can use features like LightBulb , Eyedropper , Icicles , Exposure.
-3. There are some filters like GreyScale , Sepia , Amaro , Lark you can use to make your photo more beautiful. 
-
-<!-- USAGE EXAMPLES -->
-
-<br />
-
-## File Structure 🧬
+## File Structure
 
 ```
   ├── assets/
         ├──favicon        contains favicon and shortcut icons
-        ├──img            contains imgs and icons.
+        ├──images         contains images and icons
         ├──logo           contains the logo
+        ├──ui             contains the ui
   ├── css/
         ├──style.css      all the default styling of index.html
   ├── js/
         ├──main.js        all the functions of index.html
-  ├── index.html          Main page of the website
+  ├── index.html          main page of the website
 ```
 
+## Getting Started
 
+This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
 
+### Installation
 
-<!-- CONTRIBUTING -->
-<br />
+Setting up development environment (for VS Code Users)
+  
+  Install The Live server extension on your native VS Code: [Link](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+  (Helps you to run the live project and not reload any changes that you make in it)
+  
+  Set up the project directory:
+  
 
-## Contributing 👍
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+2. Navigate to Project Directory
+   ```sh
+   cd <project-name>
+   ```
+3. Open VS Code from terminal
+   ```sh
+   code .
+   ```
+4. Start up Live server
+  <img src="https://i.imgur.com/drgG1vF.png"/>
+  Navigate to the bottom right corner of Visual Studio Code window and click on the "Go Live" button.
+  Your project will get loaded on the localhost url:
+  http://127.0.0.1:5500/
+  
+## Roadmap
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+See the [open issues](https://github.com/gdscjgec/Image-Editor/issues) for a list of proposed features (and known issues). Feel free to raise new issues.
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 1. Fork the Project
 2. Create your Feature Branch ( `git checkout -b feature/AmazingFeature` )
@@ -142,15 +96,16 @@ Contributions are what make the open source community such an amazing place to l
 5. Push to the Branch ( `git push origin feature/AmazingFeature` )
 6. Open a Pull Request
 
-<!-- LICENSE -->
-<br />
-
-## License ⚠️
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<!-- CONTACT -->
-
-## Contact 📧
+## Contact
 
 Mail us at - gdsc@jgec.ac.in
+
+## Contributors
+
+<a href="https://github.com/gdscjgec/Image-Editor/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=gdscjgec/Image-Editor" />
+</a>
