@@ -252,3 +252,23 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 800px) {
+  body {
+    height: auto;
+
+    grid-template-columns: auto;
+    grid-template-rows: 10% 50% 35% 25%;
+    grid-template-areas:
+      "banner "
+      " middle "
+      "left"
+      "right";
+  }
+  #upload {
+    justify-content: flex-start;
+  }
+  .download {
+    width: 25%;
+  }
+}
