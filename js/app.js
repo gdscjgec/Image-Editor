@@ -598,24 +598,36 @@ fileBtn.addEventListener('change', function(){
 cropButtonDOM.addEventListener("click", cropImage);
 
 
-// blur filter
-
 let blur = 0;
+let opacity = 100;
 
 const imgture = document.getElementById("img-box");
 
-const slider = document.getElementById("slider");
-const value = document.getElementById("blur");
+const blurSlider = document.getElementById("blur-slider");
+const blurValue = document.getElementById("blur");
+
+const opacitySlider = document.getElementById("opacity-slider");
+const opacityValue = document.getElementById("opacity");
 
 function updateFilter() {
     imgture.style.filter =
         "blur(" +
         blur +
-        "px)";
+        "px) opacity(" +
+        opacity +
+        "%)";
 }
 
-slider.addEventListener("input", function() {
-    value.innerHTML = slider.value + "px";
-    blur = slider.value;
+// blur slider
+blurSlider.addEventListener("input", function() {
+    blurValue.innerHTML = blurSlider.value + "px";
+    blur = blurSlider.value;
+    updateFilter();
+});
+
+// opacity slider
+opacitySlider.addEventListener("input", function() {
+    opacityValue.innerHTML = 100 - opacitySlider.value + "%";
+    opacity = 100 - opacitySlider.value;
     updateFilter();
 });
