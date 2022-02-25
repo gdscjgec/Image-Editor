@@ -598,10 +598,18 @@ fileBtn.addEventListener('change', function(){
 cropButtonDOM.addEventListener("click", cropImage);
 
 
+let saturate = 100;
+let huerotate = 0;
 let blur = 0;
 let opacity = 100;
 
 const imgture = document.getElementById("img-box");
+
+const saturateSlider = document.getElementById("saturate-slider");
+const saturateValue = document.getElementById("saturate");
+
+const hueSlider = document.getElementById("hue-slider");
+const hueValue = document.getElementById("hue");
 
 const blurSlider = document.getElementById("blur-slider");
 const blurValue = document.getElementById("blur");
@@ -611,21 +619,35 @@ const opacityValue = document.getElementById("opacity");
 
 function updateFilter() {
     imgture.style.filter =
-        "blur(" +
+        "saturate(" +
+        saturate +
+        "%) hue-rotate(" +
+        huerotate +
+        "deg) blur(" +
         blur +
         "px) opacity(" +
         opacity +
         "%)";
 }
 
-// blur slider
+saturateSlider.addEventListener("input", function() {
+    saturateValue.innerHTML =  saturateSlider.value + "%";
+    saturate =  saturateSlider.value;
+    updateFilter();
+});
+
+hueSlider.addEventListener("input", function() {
+    hueValue.innerHTML = hueSlider.value + "°";
+    huerotate = hueSlider.value;
+    updateFilter();
+});
+
 blurSlider.addEventListener("input", function() {
     blurValue.innerHTML = blurSlider.value + "px";
     blur = blurSlider.value;
     updateFilter();
 });
 
-// opacity slider
 opacitySlider.addEventListener("input", function() {
     opacityValue.innerHTML = 100 - opacitySlider.value + "%";
     opacity = 100 - opacitySlider.value;
