@@ -25,7 +25,7 @@ body {
 
 #banner {
   grid-area: banner;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #e5e5e5; 
   background-color: var(--banner);
   display: flex;
   justify-content: space-between;
@@ -52,18 +52,28 @@ body {
 
 .download {
   width: 10%;
-  background-color: #9e77ed;
+  /* background:#624fb6; */
+  background: linear-gradient(25deg, #371cd3f5,#9fb1d3);
+
   outline: none;
   border-radius: 5px;
   height: 60%;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255); 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-right: 5px;
 }
+
 .download:hover {
-  background-color: #a487df;
+  /* background-color:#251668; */
+  background: linear-gradient(25deg,#9fb1d3, #371cd3f5);
+}
+.Download{
+  padding-right: 10px;
+  justify-content: space-evenly;
+
 }
 
 .save-now {
@@ -73,8 +83,7 @@ body {
 
 #left {
   grid-area: left;
-
-  background-color: var(--side);
+  background-color: #CAFAFE;
   border: 1px solid #e5e5e5;
   padding: 5%;
   display: flex;
@@ -88,51 +97,116 @@ body {
   height: 50%;
   justify-content: space-between;
 }
-
-#tools h5 {
+#tools p {
+  color: #080420;
+  font-size:15px ;
+  font-weight: bold;
   width: 100%;
   padding-bottom: 0.5rem;
 }
+#exposure{
+  margin-top:  15px;
+  background-color: #CAFAFE;
+}
+.exposure-box{
+  margin:  8px;
+}
+#saturate-slider{
+  background-color: #CAFAFE;
+  margin:  3px;
+}
 
-.action-tool {
-  height: 30px;
+#hue-slider{
+  background-color: #CAFAFE;
+  margin:  8px;
+}
+#blur-slider{
+  background-color: #CAFAFE;
+  margin: 8px;
+}
+#opacity-slider{
+  background-color: #CAFAFE;
+  margin:  8px;
+}
+#resize-button{
+  margin:  8px;
+}
+#left  >  #tools  >  #tool  > .action-tool{
+  justify-content: center;
+  height: 50px;
+  width: 130px;
+  margin: 5px 2px 5px 2px;
+  color: black; 
+  background:#a8a0ca;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  border: #060011;
+
+}
+#right > #tools > h4{
+  margin-bottom: 10px;
+}
+#right > #tools >.action-tool {
+  margin-bottom: 5px;
+  color: rgb(0, 0, 0); 
+  background:#a8a0ca;
+  height: 45px;
   padding: 0 5%;
   width: auto;
   outline: none;
   border: none;
+  border-radius: 7px;
+  border: #060011;
+} 
+
+#left  >  #tools  >  #tool  > .action-tool:hover{
+  background:#3e6581;
+  color: white;
+  box-shadow:0px 5px 5px 0px #060011;
+
+}
+#right >  #tools  > .action-tool:hover {
+  background:#3e6581;
+  height: 55px;
+  border-radius: 10px;
+  color: white; 
+  box-shadow:0px 5px 5px 0px #060011;
 }
 
-.action-tool:hover {
-  background-color: #ccc;
-}
-
-#upload,
-#Clear {
+#upload{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  /* color: black; */
 }
 
-.upload-img,
-.Clear {
+.upload-img {
   padding: 4% 7%;
-  outline: none;
-  border-radius: 6px;
-  border: 1px solid #e5e5e5;
-  background-color: white;
+  outline: none  ;
+  border-radius: 30px;
+  /* border: 1px solid #e5e5e5; */
+  background:#548faa;
+  width:150px;
+  height:60px;
+  margin-bottom: 10px;
 }
-.upload-img a,
-.Clear a {
+
+.upload-img a{
   text-decoration: none;
 }
-.upload-img i,
-.Clear i {
-  margin-right: 10%;
+
+/
+.upload-img i{
+  justify-content: center;
+  padding-right: 10px;
+
 }
-.upload-img:hover,
-.Clear:hover {
-  background-color: #ccc;
+
+.upload-img:hover{
+  background-color: #2b4f70;
+  /* box-shadow: 0px 5px 5px 0px #000002; */
+  color: white;
 }
 
 .input {
@@ -170,11 +244,12 @@ body {
 
 #middle {
   grid-area: middle;
-  background-color: var(--middle);
+  /* background-color: var(--middle); */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background: linear-gradient(#bcdfe2, #bcd7e9f5);
 }
 
 .canvas {
@@ -183,7 +258,8 @@ body {
 }
 .canvas > .uploaded-img-container {
   text-align: center;
-  border: 1px dashed #9e77ed;
+  background: linear-gradient(#6ad2db, #bdc9d1f5);  border: 1px solid #8870b82c;
+  box-shadow: 0px 10px 15px 0px #000002;
   width: 100%;
 
   display: flex;
@@ -194,8 +270,9 @@ body {
 }
 .canvas > .uploaded-img-container > .fa-cloud-upload-alt {
   font-size: 100px;
-  color: #9e77ed;
+  color:#9c2c96b4;
   padding: 10px;
+
 }
 .uploaded-img-container {
   height: 300px;
@@ -230,23 +307,46 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 10%;
-  background-color: #9e77ed;
+  width: 12%;
+  height:150%;
+  padding: 0px 15px 0px 15px;
+  margin-bottom: 10px;
+  background:#6b8fa0;
+  border-radius: 30px;
+  border: none;
   color: white;
-  border-radius: 6px;
-  border: 1px solid #e5e5e5;
+  /* border: 1px solid #e5e5e5; */
+}
+.Clear {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 12%;
+  height:150%;
+  margin-bottom: 10px;
+  background:#6b8fa0;
+  border-radius: 30px;
+  border: none;
+  /* border: 1px solid #e5e5e5; */
+}
+#upload{
+  color: white;
+  text-underline-offset:unset;
+  text-decoration: none;
 }
 
 .undo:hover,
-.redo:hover {
-  background-color: #a487df;
+.redo:hover,
+.Clear:hover{
+  background-color: #271863;
+  /* box-shadow: 0px 5px 5px 0px #000002; */
+  text-decoration: none;
 }
 
 #right {
   grid-area: right;
-  background-color: white;
-  background-color: var();
-  border: 1px solid #e5e5e5;
+ background-color: #CAFAFE;
+
   padding: 5%;
   display: flex;
   flex-direction: column;
