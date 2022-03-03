@@ -42,7 +42,7 @@ body {
 }
 
 .download-button {
-  width: 90%;
+  width:60%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -51,7 +51,7 @@ body {
 }
 
 .download {
-  width: 10%;
+  width: 17%;
   /* background:#624fb6; */
   background: linear-gradient(25deg, #371cd3f5,#9fb1d3);
 
@@ -105,31 +105,31 @@ body {
   padding-bottom: 0.5rem;
 }
 #exposure{
-  margin-top:  15px;
+  margin-top:5px;
   background-color: #CAFAFE;
 }
 .exposure-box{
-  margin:  8px;
+  margin:  2%;
 }
 #saturate-slider{
   background-color: #CAFAFE;
-  margin:  3px;
+  margin:  2%;
 }
 
 #hue-slider{
   background-color: #CAFAFE;
-  margin:  8px;
+  margin:  2%;
 }
 #blur-slider{
   background-color: #CAFAFE;
-  margin: 8px;
+  margin:  2%;
 }
 #opacity-slider{
   background-color: #CAFAFE;
-  margin:  8px;
+  margin:  2%;
 }
 #resize-button{
-  margin:  8px;
+  margin:  2%;
 }
 #left  >  #tools  >  #tool  > .action-tool{
   justify-content: center;
@@ -182,7 +182,7 @@ body {
 }
 
 .upload-img {
-  padding: 4% 7%;
+  padding: 4% 4%;
   outline: none  ;
   border-radius: 30px;
   /* border: 1px solid #e5e5e5; */
@@ -199,9 +199,11 @@ body {
 /
 .upload-img i{
   justify-content: center;
-  padding-right: 10px;
 
 }
+/* #upload > .upload-img > #input-field > .upload > span {
+  margin: 10px;
+} */
 
 .upload-img:hover{
   background-color: #2b4f70;
@@ -309,7 +311,7 @@ body {
   justify-content: space-evenly;
   width: 12%;
   height:150%;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 10px 0px 1px;
   margin-bottom: 10px;
   background:#6b8fa0;
   border-radius: 30px;
@@ -364,11 +366,29 @@ body {
       " middle "
       "left"
       "right";
-  }
+        }
+      
   #upload {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .download {
-    width: 25%;
+    width: 45%;
+  }
+}
+@media only screen and (max-width:464px) {
+  middle,
+  left,
+  right {
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 55% 55% 35% 10%;
+  }
+}
+    
+    @media screen and (max-width: 300px) 
+    {
+
+  #right {
+  margin-top: 60px;
   }
 }
